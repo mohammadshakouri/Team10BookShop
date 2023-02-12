@@ -56,7 +56,7 @@ namespace Team10BookShop.Account
                         break;
                     case SignInStatus.Failure:
                     default:
-                        FailureText.Text = "Invalid login attempt";
+                        FailureText.Text = "تلاش ناموفق برای ورود";
                         ErrorMessage.Visible = true;
                         break;
                 }

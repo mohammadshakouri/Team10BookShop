@@ -13,29 +13,29 @@
                         <div class="row">
                             <div class="col-sm">
 
-                                <span id="search-title">Looking for a book?</span>
+                                <span id="search-title">دنبال چه کتابی می گردی؟</span>
 
                                 </div>
 
 
                     <asp:DropDownList ID="ddDetails" class="btn btn-primary dropdown-toggle" runat="server">
-                        <asp:ListItem >Author</asp:ListItem>
-                        <asp:ListItem>Title</asp:ListItem>
-                        <asp:ListItem>ISBN</asp:ListItem>
+                        <asp:ListItem >نویسنده</asp:ListItem>
+                        <asp:ListItem>عنوان</asp:ListItem>
+                        <asp:ListItem>شابک</asp:ListItem>
                     </asp:DropDownList>
                       
 
                     <asp:DropDownList ID="ddCategory" class="btn btn-primary dropdown-toggle" runat="server"  DataTextField="Name" DataValueField="Name" AutoPostBack="True" OnSelectedIndexChanged="ddCategory_SelectedIndexChanged">
-                        <asp:ListItem Value="0">All</asp:ListItem>
-                        <asp:ListItem Value="1">Children</asp:ListItem>
-                        <asp:ListItem Value="2">Technical</asp:ListItem>
-                        <asp:ListItem Value="3">Non-Fiction</asp:ListItem>
-                        <asp:ListItem Value="4">Finance</asp:ListItem>
+                        <asp:ListItem Value="0">همه دسته ها</asp:ListItem>
+                        <asp:ListItem Value="1">کودک</asp:ListItem>
+                        <asp:ListItem Value="2">تکنولوژی</asp:ListItem>
+                        <asp:ListItem Value="3">غیر داستانی</asp:ListItem>
+                        <asp:ListItem Value="4">مالی</asp:ListItem>
                     </asp:DropDownList>
                   </div>
                     <div class="input-group">
-                        <asp:TextBox ID="txtSearch" runat="server" class="form-control" placeholder="Search.." ></asp:TextBox>
-                        <asp:Button ID="btnSearch" runat="server" class="btn btn-info" Text="Let's Go!" OnClick="btnSearch_Click" />
+                        <asp:TextBox ID="txtSearch" runat="server" class="form-control" placeholder="ازاین جا پیدا کن" ></asp:TextBox>
+                        <asp:Button ID="btnSearch" runat="server" class="btn btn-info" Text="جستجو" OnClick="btnSearch_Click" />
                         <asp:Label ID="SearchMessage" runat="server" ForeColor="White"></asp:Label>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                     <div class = "container-fluid">
                         
                     </div>
-                    <asp:Panel ID="Panel1" runat="server">
+                    <asp:Panel ID="Panel1" CssClass="bg-dedicated" runat="server">
                     
                         <asp:DataList ID="DataList1" runat="server" DataKeyField="BookID" HorizontalAlign="Center" RepeatColumns="3" RepeatDirection="Horizontal" OnItemCommand="DataList1_ItemCommand" CellPadding="50" CellSpacing="50">
                             <ItemTemplate>
@@ -56,36 +56,37 @@
                                          <div class="book-top">
                                              <image  src="../Images/<%# Eval("ISBN") %>.jpg" width="180" height="210" />
                                              <br />
-                                             <asp:Label id="TitleLabel" runat="server" Text='<%# Eval("Title") %>' style="font-size:18px; color:lightseagreen; font-weight:bolder;font-family:'Arial Rounded MT'"/>
+                                             <asp:Label id="TitleLabel" runat="server" Text='<%# Eval("Title") %>' style="font-size:18px; color:lightseagreen; font-weight:bolder;"/>
                                          </div>
 
                                         <!-- Book middle-->
                                          <div class="book-middle" style="font-size:14px; color:dimgray">
                                             <br />
-                                             BookID:
+                                             شناسه کتاب:
                                             <asp:Label ID="BookIDLabel" runat="server" Text='<%# Eval("BookID") %>' />
                                             <br />
-                                            ISBN:
+                                            شابک:
                                             <asp:Label ID="ISBNLabel" runat="server" Text='<%# Eval("ISBN") %>' />
                                             <br />
-                                            Author:
+                                            نویسنده:
                                             <asp:Label ID="AuthorLabel" runat="server" Text='<%# Eval("Author") %>' />
-                                            <br />
+                                            <%--<br />
                                             CategoryID:
                                             <asp:Label ID="CategoryIDLabel" runat="server" Text='<%# Eval("CategoryID") %>' />
-                                            <br />
+                                            <br />--%>
                                              </div>
 
                                         <!-- Book bottom -->
                                         <div style="font-size:20px; font-weight:bolder;padding-bottom:50px" >
-                                            <div style="color:green"> Stock:
+                                            <div style="color:green"> موجودی:
                                                 <asp:Label ID="StockLabel" runat="server" Text='<%# Eval("Stock") %>' />
                                             </div>
                                         
-                                            <div style="color:indianred"> $
+                                            <div style="color:indianred"> 
                                                 <asp:Label ID="PriceLabel" runat="server" Text='<%# Eval("Price") %>' />
+                                                تومان
                                             </div>
-                                            <asp:Button ID="DetailButton" class="btn btn-info" runat="server" Text="View Detail" CommandName="Details" />
+                                            <asp:Button ID="DetailButton" class="btn btn-light" runat="server" Text="مشاهده جزئیات" CommandName="Details" />
                                             <br />
                                             </div> <!-- Book bottom (close) -->
                                     </div><!-- Jumbotron (close)-->

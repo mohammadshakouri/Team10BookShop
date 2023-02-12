@@ -50,7 +50,6 @@ input[type="select"] {
 #search-title {
     font-size: 30px;
     color: white;
-    font-family: 'Arial Rounded MT';
 }
 
 #booksdisplay {
@@ -58,5 +57,8 @@ input[type="select"] {
 }
 ul li{
     margin:0px 5px;
+}
+.bg-dedicated {
+    background: #edf1ed;
 }
 
