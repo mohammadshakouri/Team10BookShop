@@ -71,3 +71,9 @@ ul li{
     height:230px;
     width:auto;
 }
+ td {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    vertical-align: middle !important;
+}

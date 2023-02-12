@@ -9,46 +9,7 @@ namespace Team10BookShop
 {
     public partial class CheckOut : System.Web.UI.Page
     {
-        //List<Book> cartList;
-
-        //protected void Page_Load(object sender, EventArgs e)
-        //{
-        //    if (!IsPostBack)
-        //    {
-
-        //        cartList = Session["cart"] as List<Book>;
-        //        if (cartList != null)
-        //        {
-        //            CartGridView.DataSource = cartList;
-        //            CartGridView.DataBind();
-        //        }
-
-        //        decimal sum = 0;
-        //        foreach (Book c in cartList)
-        //        {
-        //            sum += c.Price;
-        //        }
-        //        PriceLabel.Text = sum.ToString();
-        //    }
-
-        //}
-        //protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)
-        //{
-        //    cartList = Session["cart"] as List<Book>;
-        //    int Index = e.RowIndex;
-        //    cartList.RemoveAt(Index);
-        //    Session["cart"] = cartList;
-        //    CartGridView.DataSource = cartList;
-        //    CartGridView.DataBind();
-
-        //    decimal sum = 0;
-        //    foreach (Book c in cartList)
-        //    {
-        //        sum += c.Price;
-        //    }
-        //    PriceLabel.Text = sum.ToString();
-        //}
-
+        
         List<Book> cartList;
 
         protected void Page_Load(object sender, EventArgs e)
