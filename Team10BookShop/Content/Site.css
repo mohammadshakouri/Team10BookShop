@@ -61,4 +61,13 @@ ul li{
 .bg-dedicated {
     background: #edf1ed;
 }
-
+ .d-inline {
+     display:inline;
+ }
+.m-l-50 {
+    margin-left: 50px;
+}
+.book-image {
+    height:230px;
+    width:auto;
+}

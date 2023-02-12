@@ -6,7 +6,7 @@
     <h2><%: Title %></h2>
 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-7">
             <section id="loginForm">
                 <div class="form-horizontal">
                     <h4>لطفا برای ادامه وارد حساب کاربری خود شوید</h4>
@@ -42,25 +42,25 @@
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <asp:Button runat="server" OnClick="LogIn" Text="ورود" CssClass="btn btn-success" />
+                            <span class="p-x-5">
+                            </span>
+                            <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled" CssClass="contact3-form btn btn-light">ثبت نام به عنوان عضو جدید</asp:HyperLink>
                         </div>
                     </div>
                 </div>
-                <br />
+               
                 <p>
-                    <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled" CssClass="contact3-form btn btn-light">ثبت نام به عنوان عضو جدید</asp:HyperLink>
-                </p>
-                <p>
-                    <%-- Enable this once you have account confirmation enabled for password reset functionality
-                    <asp:HyperLink runat="server" ID="ForgotPasswordHyperLink" ViewStateMode="Disabled">Forgot your password?</asp:HyperLink>
-                    --%>
+                     <%--Enable this once you have account confirmation enabled for password reset functionality
+                    <asp:HyperLink runat="server" ID="ForgotPasswordHyperLink" ViewStateMode="Enabled">Forgot your password?</asp:HyperLink>--%>
+                    
                 </p>
             </section>
         </div>
 
-        <div class="col-md-4">
-            <section id="socialLoginForm">
+        <div class="col-md-5">
+           <%-- <section id="socialLoginForm">
                 <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
-            </section>
+            </section>--%>
         </div>
     </div>
 </asp:Content>
