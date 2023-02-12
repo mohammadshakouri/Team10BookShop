@@ -63,7 +63,7 @@ namespace Team10BookShop
             lbBookID.Text = a.BookID.ToString();
             lbCategory.Text = cat.Name;
             lbISBN.Text = a.ISBN;
-            lbPrice.Text = $"{a.Price:c}";
+            lbPrice.Text = $"{a.Price} تومان";
             lbStock.Text = a.Stock.ToString();
             Image1.ImageUrl = $"../Images/{a.ISBN}.jpg";
             txQty.Text = qty.ToString();
@@ -124,7 +124,8 @@ namespace Team10BookShop
                 }
                 Session["cart"] = bookList;
 
-                Response.Write("<script>confirm('Added to Cart!!')</script>");
+                //Response.Write("<script>confirm('Added to Cart!!')</script>");
+                Response.Redirect("~/Anonymous/CheckOut");
             }
             else
             {
