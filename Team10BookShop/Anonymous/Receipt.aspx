@@ -1,19 +1,20 @@
 ﻿<%@ Page Title="Receipt" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Receipt.aspx.cs" Inherits="Team10BookShop.Receipt" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-        <h1>Order Summary</h1><br />
-    <h4>Thank you. Your order has been confirmed.</h4><br />
+        
+    <h4 class="alert alert-success text-center">سفارش شما با موفقیت ثبت شد</h4><br />
+    <h3>جزئیات سفارش</h3><br />
         <div>
-            <asp:GridView ID="PurchaseGridView" runat="server" AutoGenerateColumns="False" Width="676px">
+            <asp:GridView ID="PurchaseGridView" CssClass="table table-hover" runat="server" AutoGenerateColumns="False">
             <Columns>                
-                <asp:TemplateField HeaderText="No.">
+                <asp:TemplateField HeaderText="ردیف">
                 <ItemTemplate>
                 <%# Container.DataItemIndex+1 %>
                 </ItemTemplate>
                 </asp:TemplateField>
-                <asp:BoundField DataField="Title" HeaderText="Title" />
-                <asp:BoundField DataField="Author" HeaderText="Author" />
-                <asp:BoundField DataField="ISBN" HeaderText="ISBN" />
-                <asp:BoundField DataField="Price" HeaderText="Price" />
+                <asp:BoundField DataField="Title" HeaderText="عنوان کتاب" />
+                <asp:BoundField DataField="Author" HeaderText="نویسنده" />
+                <asp:BoundField DataField="ISBN" HeaderText="شابک" />
+                <asp:BoundField DataField="Price" HeaderText="قیمت (ریال)" />
                 <asp:TemplateField>
                     <ItemTemplate>
                         <image src="../Images/<%# Eval("ISBN") %>.jpg" width="90" height="120"></image>
@@ -24,6 +25,6 @@
         </div>
         <br />
         <div>
-            Payment received is S$<asp:Label ID="PriceLabel" runat="server" Text="Label"></asp:Label>.
+            جمع کل هزینه پرداخت شده: <asp:Label CssClass="alert alert-success" ID="PriceLabel" runat="server" Text="Label"></asp:Label> ریال
         </div>
 </asp:Content>
