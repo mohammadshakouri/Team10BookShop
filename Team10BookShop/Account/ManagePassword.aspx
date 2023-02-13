@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="Manage Password" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManagePassword.aspx.cs" Inherits="Team10BookShop.Account.ManagePassword" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
+    <%--<h2><%: Title %>.</h2>--%>
+    <h2>مدیریت رمز عبور</h2>
     <div class="form-horizontal">
         <section id="passwordForm">
             <asp:PlaceHolder runat="server" ID="setPassword" Visible="false">
@@ -48,42 +49,43 @@
 
             <asp:PlaceHolder runat="server" ID="changePasswordHolder" Visible="false">
                 <div class="form-horizontal">
-                    <h4>Change Password Form</h4>
+                    <h4>تغییر رمز عبور</h4>
                     <hr />
                     <asp:ValidationSummary runat="server" ShowModelStateErrors="true" CssClass="text-danger" />
                     <div class="form-group">
-                        <asp:Label runat="server" ID="CurrentPasswordLabel" AssociatedControlID="CurrentPassword" CssClass="col-md-2 control-label">Current password</asp:Label>
+                        <asp:Label runat="server" ID="CurrentPasswordLabel" AssociatedControlID="CurrentPassword" CssClass="col-md-2 control-label">رمز عبور فعلی</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="CurrentPassword" TextMode="Password" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="CurrentPassword"
-                                CssClass="text-danger" ErrorMessage="The current password field is required."
+                                CssClass="text-danger" ErrorMessage="وارد کردن رمز عبور فعلی الزامی است"
                                 ValidationGroup="ChangePassword" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <asp:Label runat="server" ID="NewPasswordLabel" AssociatedControlID="NewPassword" CssClass="col-md-2 control-label">New password</asp:Label>
+                        <asp:Label runat="server" ID="NewPasswordLabel" AssociatedControlID="NewPassword" CssClass="col-md-2 control-label">رمز عبور جدید</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="NewPassword" TextMode="Password" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="NewPassword"
-                                CssClass="text-danger" ErrorMessage="The new password is required."
+                                CssClass="text-danger" ErrorMessage="لطفا رمز عبور جدید را وارد کنید"
                                 ValidationGroup="ChangePassword" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <asp:Label runat="server" ID="ConfirmNewPasswordLabel" AssociatedControlID="ConfirmNewPassword" CssClass="col-md-2 control-label">Confirm new password</asp:Label>
+                        <asp:Label runat="server" ID="ConfirmNewPasswordLabel" AssociatedControlID="ConfirmNewPassword" CssClass="col-md-2 control-label">تکرار رمز عبور جدید</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="ConfirmNewPassword" TextMode="Password" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmNewPassword"
-                                CssClass="text-danger" Display="Dynamic" ErrorMessage="Confirm new password is required."
+                                CssClass="text-danger" Display="Dynamic" ErrorMessage="تکرار رمز عبور جدید الزامی است"
                                 ValidationGroup="ChangePassword" />
                             <asp:CompareValidator runat="server" ControlToCompare="NewPassword" ControlToValidate="ConfirmNewPassword"
-                                CssClass="text-danger" Display="Dynamic" ErrorMessage="The new password and confirmation password do not match."
+                                CssClass="text-danger" Display="Dynamic" ErrorMessage="تکرار رمز عبور با رمز عبور وارد شده مطابقت ندارد"
                                 ValidationGroup="ChangePassword" />
                         </div>
                     </div>
+                    <br />
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:Button runat="server" Text="Change Password" ValidationGroup="ChangePassword" OnClick="ChangePassword_Click" CssClass="btn btn-default" />
+                            <asp:Button runat="server" Text="تغییر رمز عبور" ValidationGroup="ChangePassword" OnClick="ChangePassword_Click" CssClass="btn btn-success" />
                         </div>
                     </div>
                 </div>
