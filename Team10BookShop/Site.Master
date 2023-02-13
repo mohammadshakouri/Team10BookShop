@@ -115,11 +115,27 @@
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-           <footer>
-
-           </footer>
+                
+           
         </div>
+        <footer >
+         <div class="container-fluid" style="background-color:#495370;">
+               
+			<div class="row d-flex text-center justify-content-around align-items-center">
+                <div class="col-md-4"><div class="social-links">
+					سلام به همه
+				</div> <!-- .social-links --></div>
+                 <div class="col-md-4"> <address>
+					<p>ایران | شیراز  <br><a href="tel:354543543">09032309534</a> <br> <a href="">info@webrubik.com</a></p>
+				</address></div>
+                 <div class="col-md-4"> سلام به همه</div>
+               <hr />
+                <p class="copy">تمامی حقوق برای انتشارات سییماک محفوظ است</p>		       
+                </div>
+			</div>
+				
+			
+            </footer> <!-- .site-footer -->   
     </form>
 </body>
 </html>
