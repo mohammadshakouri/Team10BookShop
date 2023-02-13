@@ -56,11 +56,12 @@
                                          <div class="book-top">
                                              <image  src="../Images/<%# Eval("ISBN") %>.jpg" width="180" height="210" />
                                              <br />
-                                             <asp:Label id="TitleLabel" runat="server" Text='<%# Eval("Title") %>' style="font-size:18px; color:lightseagreen; font-weight:bolder;"/>
+                                             <br />
+                                             <asp:Label id="TitleLabel" runat="server" Text='<%# Eval("Title") %>' style="font-size:20px; color:lightseagreen; font-weight:bolder;"/>
                                          </div>
 
                                         <!-- Book middle-->
-                                         <div class="book-middle" style="font-size:14px; color:dimgray">
+                                         <div class="book-middle" style="font-size:18px; color:dimgray">
                                             <br />
                                              شناسه کتاب:
                                             <asp:Label ID="BookIDLabel" runat="server" Text='<%# Eval("BookID") %>' />

@@ -3,7 +3,7 @@
     <br />
     <br />
     <br />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCancelingEdit="OnRowCancelingEdit" OnRowDeleting="OnRowDeleting" OnRowEditing="OnRowEditing" OnRowUpdating="OnRowUpdating" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="1234px" DataKeyNames="BookID">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCancelingEdit="OnRowCancelingEdit" OnRowDeleting="OnRowDeleting" OnRowEditing="OnRowEditing" OnRowUpdating="OnRowUpdating" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="1634px" DataKeyNames="BookID">
         <Columns>
             <asp:BoundField DataField="BookID" HeaderText="Book ID" />
             <asp:BoundField DataField="Title" HeaderText="Title" />

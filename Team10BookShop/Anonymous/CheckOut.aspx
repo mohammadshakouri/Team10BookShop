@@ -14,7 +14,7 @@
                 <asp:BoundField DataField="Title" HeaderText="عنوان کتاب" />
                 <asp:BoundField DataField="Author" HeaderText="نویسنده" />
                 <asp:BoundField DataField="ISBN" HeaderText="شابک" />
-                <asp:BoundField DataField="Price" HeaderText="قیمت (ریال)" />
+                <asp:BoundField DataField="Price" HeaderText="قیمت (تومان)" />
                 <asp:TemplateField>
                     <ItemTemplate>
                         <image src="../Images/<%# Eval("ISBN") %>.jpg" width="90" height="120"></image>
@@ -30,7 +30,7 @@
         </>
         <br />
         <div>
-              مجموع هزینه قابل پرداخت به ریال  <asp:Label ID="PriceLabel" runat="server" Text="Label"></asp:Label>
+              مجموع هزینه قابل پرداخت به تومان  <asp:Label ID="PriceLabel" runat="server" Text="Label"></asp:Label>
         </div>
         <br />
         <div>

@@ -1,15 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OwnerUpdateInventory.aspx.cs" Inherits="Team10BookShop.OwnerUpdateInventory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:GridView CssClass="tabble" ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="BookID" DataSourceID="SqlDataSource1" Height="285px" Width="1290px">
+    <div class="row d-flex text-center justify-content-center">
+    <asp:GridView CssClass="table table-hover" ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" Width="1600px" AutoGenerateColumns="False" DataKeyNames="BookID" DataSourceID="SqlDataSource1" >
         <Columns>
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-            <asp:BoundField DataField="BookID" HeaderText="BookID" InsertVisible="False" ReadOnly="True" SortExpression="BookID" />
-            <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
-            <asp:BoundField DataField="CategoryID" HeaderText="CategoryID" SortExpression="CategoryID" />
-            <asp:BoundField DataField="ISBN" HeaderText="ISBN" SortExpression="ISBN" />
-            <asp:BoundField DataField="Author" HeaderText="Author" SortExpression="Author" />
-            <asp:BoundField DataField="Stock" HeaderText="Stock" SortExpression="Stock" />
-            <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+            <asp:CommandField ShowDeleteButton="True" DeleteText="حذف" ShowEditButton="True" EditText="ویرایش" ControlStyle-CssClass="btn btn-light d-inline" UpdateText="بروزرسانی" CancelText="انصراف"/>
+            <asp:BoundField DataField="BookID" HeaderText="شناسه کتاب" InsertVisible="False" ReadOnly="True" SortExpression="BookID" />
+            <asp:BoundField DataField="Title" HeaderText="عنوان کتاب" SortExpression="Title" />
+            <asp:BoundField DataField="CategoryID" HeaderText="شناسه دسته بندی" SortExpression="CategoryID" />
+            <asp:BoundField DataField="ISBN" HeaderText="شابک" SortExpression="ISBN" />
+            <asp:BoundField DataField="Author" HeaderText="نویسنده" SortExpression="Author" />
+            <asp:BoundField DataField="Stock" HeaderText="موجودی" SortExpression="Stock" />
+            <asp:BoundField DataField="Price" HeaderText="قیمت (تومان)" SortExpression="Price" />
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=.;Initial Catalog=Team10BookShop;Integrated Security=True" DeleteCommand="DELETE FROM [Book] WHERE [BookID] = @BookID" InsertCommand="INSERT INTO [Book] ([Title], [CategoryID], [ISBN], [Author], [Stock], [Price]) VALUES (@Title, @CategoryID, @ISBN, @Author, @Stock, @Price)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Book]" UpdateCommand="UPDATE [Book] SET [Title] = @Title, [CategoryID] = @CategoryID, [ISBN] = @ISBN, [Author] = @Author, [Stock] = @Stock, [Price] = @Price WHERE [BookID] = @BookID">
@@ -34,4 +35,5 @@
             <asp:Parameter Name="BookID" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
+        </div>
 </asp:Content>
