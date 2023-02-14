@@ -5,7 +5,7 @@
     <h1>افزودن کتاب</h1>
 
     <!-- Input fields -->
-    <table class="table table-hover">
+    <table class="table">
         <tr>
             <td> <asp:Label ID="lblBookTitle" runat="server" Text="عنوان کتاب" ></asp:Label></td>
             <td> <asp:TextBox ID="txtBookTitle" runat="server" TabIndex="2" Width="250px" CssClass="form-control" ></asp:TextBox>
