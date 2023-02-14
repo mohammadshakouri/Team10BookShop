@@ -184,6 +184,7 @@
     <Content Include="Images\FavIcon.png" />
     <Content Include="Images\LogoSimac.png" />
     <Content Include="Images\low-poly-texture-26.png" />
+    <Content Include="Images\slide1.png" />
     <Content Include="Owner\OwnerUpdateInventory.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\Form.css" />

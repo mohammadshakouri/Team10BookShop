@@ -7,30 +7,30 @@
     <!-- Input fields -->
     <table class="table table-hover">
         <tr>
-            <td> <asp:Label ID="lblBookTitle" runat="server" Text="عنوان کتاب"></asp:Label></td>
-            <td> <asp:TextBox ID="txtBookTitle" runat="server" TabIndex="2" Width="300px" CssClass="form-control"></asp:TextBox>
-                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorBookTitle" runat="server" ErrorMessage="Book Title is required" ControlToValidate="txtBookTitle" ForeColor="Red">*</asp:RequiredFieldValidator>
+            <td> <asp:Label ID="lblBookTitle" runat="server" Text="عنوان کتاب" ></asp:Label></td>
+            <td> <asp:TextBox ID="txtBookTitle" runat="server" TabIndex="2" Width="250px" CssClass="form-control" ></asp:TextBox>
+                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorBookTitle" runat="server" ErrorMessage="عنوان کتاب را وارد کنید" ControlToValidate="txtBookTitle" ForeColor="Red">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td><asp:Label ID="lblCategory" runat="server" Text="دسته بندی"></asp:Label></td>
-            <td> <asp:DropDownList CssClass="form-select" ID="ddCategory" runat="server" TabIndex="3" Width="200px" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="CategoryID">
+            <td> <asp:DropDownList CssClass="form-select" ID="ddCategory" runat="server" TabIndex="3" Width="250px" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="CategoryID">
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MyBooks %>" SelectCommand="SELECT [CategoryID], [Name] FROM [Category]"></asp:SqlDataSource>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidatorCategory" runat="server" ControlToValidate="ddCategory" ErrorMessage="Category is required" ForeColor="Red">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatorCategory" runat="server" ControlToValidate="ddCategory" ErrorMessage="لطفا دسته بندی را انتخاب کنید" ForeColor="Red">*</asp:RequiredFieldValidator>
             </td>
         </tr>
        <tr>
            <td style="height: 25px"><asp:Label ID="lblisbn" runat="server" Text="شابک"></asp:Label></td>
-           <td style="height: 25px"> <asp:TextBox ID="txtISBN" runat="server" TabIndex="4" Width="150px" CssClass="form-control" TextMode="Number"></asp:TextBox>
-                   <asp:RequiredFieldValidator ID="RequiredFieldValidatorISBN" runat="server" ControlToValidate="txtISBN" EnableTheming="False" ErrorMessage="ISBN is required" ForeColor="Red">*</asp:RequiredFieldValidator>
-                   <asp:RegularExpressionValidator ID="RegularExpressionValidatorISBN" runat="server" ControlToValidate="txtISBN" Display="Dynamic" ErrorMessage="Invalid ISBN" ForeColor="Red" ValidationExpression="\d{13}">*</asp:RegularExpressionValidator>
+           <td style="height: 25px"> <asp:TextBox ID="txtISBN" runat="server" TabIndex="4" Width="250px" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidatorISBN" runat="server" ControlToValidate="txtISBN" EnableTheming="False" ErrorMessage="شابک الزامی است" ForeColor="Red">*</asp:RequiredFieldValidator>
+<%--                   <asp:RegularExpressionValidator ID="RegularExpressionValidatorISBN" runat="server" ControlToValidate="txtISBN" Display="Dynamic" ErrorMessage="Invalid ISBN" ForeColor="Red" ValidationExpression="\d{13}">*</asp:RegularExpressionValidator>--%>
            </td>
        </tr>
         <tr>
-            <td><asp:Label ID="lblAuthor" runat="server" Text="Author"></asp:Label></td>
-            <td><asp:TextBox ID="txtAuthor" runat="server" TabIndex="5" Width="150px"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorAuthor" runat="server" ControlToValidate="txtISBN" ErrorMessage="Author is required" ForeColor="Red">*</asp:RequiredFieldValidator>
+            <td><asp:Label ID="lblAuthor" runat="server" Text="نویسنده"></asp:Label></td>
+            <td><asp:TextBox ID="txtAuthor" runat="server" TabIndex="5" Width="250px" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorAuthor" runat="server" ControlToValidate="txtISBN" ErrorMessage="لطفا نام نویسنده را وارد کنید" ForeColor="Red">*</asp:RequiredFieldValidator>
             </td>
         </tr>
        <%-- <tr>
@@ -42,20 +42,21 @@
         </tr>--%>
 
         <tr>
-            <td><asp:Label ID="lblPrice" runat="server" Text="Price"></asp:Label></td>
-            <td><asp:TextBox ID="txtPrice" runat="server" TabIndex="7" TextMode="Number" Width="40px"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorPrice" runat="server" ControlToValidate="txtPrice" ErrorMessage="Price is required" ForeColor="Red">*</asp:RequiredFieldValidator>
-                     <asp:RangeValidator ID="RangeValidatorPrice" runat="server" ControlToValidate="txtPrice" ErrorMessage="Price needs to be at least 1" ForeColor="Red" MaximumValue="10000" MinimumValue="1" Type="Integer">*</asp:RangeValidator></td>
+            <td><asp:Label ID="lblPrice" runat="server" Text="قیمت"></asp:Label></td>
+            <td><asp:TextBox ID="txtPrice" runat="server" TabIndex="7" TextMode="Number" Width="250px" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorPrice" runat="server" ControlToValidate="txtPrice" ErrorMessage="لطفا قیمت را وارد کنید" ForeColor="Red">*</asp:RequiredFieldValidator>
+<%--                     <asp:RangeValidator ID="RangeValidatorPrice" runat="server" ControlToValidate="txtPrice" ErrorMessage="حداقل قیمت باید مقدار 1 باشد" ForeColor="Red" MaximumValue="10000" MinimumValue="1" Type="Integer">*</asp:RangeValidator></td>--%>
         </tr>
 
         <tr>
-            <td><asp:Label ID="lblCover" runat="server" Text="Book Cover"></asp:Label></td>
-            <td><asp:FileUpload ID="FileUploadImage" runat="server" TabIndex="8" /></td>
+            <td><asp:Label ID="lblCover" runat="server" Text="تصویر کتاب"></asp:Label></td>
+            <td><asp:FileUpload ID="FileUploadImage" CssClass="btn btn-outline-secondary" runat="server" TabIndex="8" EnableTheming="true"   /></td>
         </tr>
     </table>
      
     <!-- File Upload, Confirm button and Errors Display -->
-    <asp:Button ID="btnConfirm" runat="server" Text="Confirm" TabIndex="9" OnClick="btnConfirm_Click" />
+    <asp:Button ID="btnConfirm" runat="server" Text="تأیید و بارگذاری" TabIndex="9" CssClass="btn btn-success" OnClick="btnConfirm_Click" />
+    <br />
     <br />
     <asp:Label ID="lblErrorFileUpload" runat="server" ForeColor="Red"></asp:Label>
     <asp:ValidationSummary ID="ValidationSummaryAddBook" runat="server" ForeColor="Red" />

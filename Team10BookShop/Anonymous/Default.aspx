@@ -6,6 +6,46 @@
         <ContentTemplate>
             <!-- Wrapper -->
              <div class="wrapper">
+                 <div class="row justify-content-center">
+        <div class="col">
+            <%--<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="false">--%>
+               <%-- <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>--%>
+                <div class="carousel-inner rounded">
+                    <div class="carousel-item active">
+                        <img src="../Images/slide1.png" class="d-block w-100" alt="نشر سیماک" />                       
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4><span style="background-color:rgba(255,255,255,0.5); color:black" class="rounded">انتشارات سیماک</span></h4>
+                          <%--  <p>آخرین تحولات جهان را با ما دنبال کنید</p>--%>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+<%--                        <img src="../Content/Images/2.jpg" class="d-block w-100" alt="...">--%>
+                        <div class="carousel-caption d-none d-md-block">
+                           <h4><mark class="rounded">سریع ترین بروزرسانی</mark></h4>
+                            <p>آخرین تحولات جهان را با ما دنبال کنید</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+<%--                        <img src="../Content/Images/3.jpg" class="d-block w-100" alt="...">--%>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4><mark class="rounded">بیشترین بازدید در یک روز کاری</mark></h4>
+                            <p>آخرین تحولات جهان را با ما دنبال کنید</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </div>
 
                 <!-- Search bar -->
                 <div id="booksearchbar" class="jumbotron">
@@ -99,6 +139,7 @@
                     </asp:Panel>
                 </div> <!-- Book display (close)-->
             </div>
+                 </div>
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>

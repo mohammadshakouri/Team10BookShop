@@ -21,15 +21,15 @@ namespace Team10BookShop
         {
             modelBuilder.Entity<Book>()
                 .Property(e => e.Title)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Book>()
                 .Property(e => e.ISBN)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Book>()
                 .Property(e => e.Author)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Book>()
                 .HasMany(e => e.OrderDetails)
@@ -38,7 +38,7 @@ namespace Team10BookShop
 
             modelBuilder.Entity<Category>()
                 .Property(e => e.Name)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<Order>()
                 .HasMany(e => e.OrderDetails)

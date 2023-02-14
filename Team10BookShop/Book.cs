@@ -18,17 +18,17 @@ namespace Team10BookShop
         public int BookID { get; set; }
 
         [Required]
-        [StringLength(120)]
+        //[StringLength(120)]
         public string Title { get; set; }
 
         public int CategoryID { get; set; }
 
         [Required]
-        [StringLength(22)]
+        //[StringLength(22)]
         public string ISBN { get; set; }
 
         [Required]
-        [StringLength(64)]
+        //[StringLength(64)]
         public string Author { get; set; }
 
         //public int Stock { get; set; }

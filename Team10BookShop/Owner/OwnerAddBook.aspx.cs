@@ -57,22 +57,22 @@ namespace Team10BookShop
                 // Validate file type
                 string fileExtension = System.IO.Path.GetExtension(FileUploadImage.FileName).ToLower();
                 if ((fileExtension != ".jpg") && (fileExtension != ".png"))
-                    lblErrorFileUpload.Text = "Only files with .jpg and .png are allowed.";
+                    lblErrorFileUpload.Text = "فقط پسوند های jpj و png مجاز است";
 
                 else
                 {
                     // Validate file size
                     int fileSize = FileUploadImage.PostedFile.ContentLength;
 
-                    if (fileSize > 2097152)
-                        lblErrorFileUpload.Text = "Maximum file size of 2MB has been exceeded.";
+                    if (fileSize > 1097152)
+                        lblErrorFileUpload.Text = "حداکثر حجم فایل باید 1 مگابایت باشد";
 
                     else
                          IsValid = true;
                 }
             }
             else
-                lblErrorFileUpload.Text = "Please select an image to upload.";
+                lblErrorFileUpload.Text = "لطفا تصویری برای بارگذاری انتخاب کنید";
 
             return IsValid;
         }
