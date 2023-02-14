@@ -37,7 +37,11 @@ namespace Team10BookShop
                 {
                     context.Books.Add(b);
                     context.SaveChanges();
-                    Response.Write("<script>confirm('Success!'); window.location = 'OwnerAddBook.aspx';</script>");
+
+                    Response.Redirect("~/Anonymous/Default.aspx");
+                    //msg.Attributes.Add("class", "alert alert-success alert-dismissible fade show");
+                    //msg.InnerHtml = "کتاب با موفقیت اضافه شد";
+                    //Response.Write("<script>confirm('Success!'); window.location = 'OwnerAddBook.aspx';</script>");
                 }
                 catch (Exception a)
                 {

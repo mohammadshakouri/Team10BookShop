@@ -58,6 +58,7 @@
     <asp:Button ID="btnConfirm" runat="server" Text="تأیید و بارگذاری" TabIndex="9" CssClass="btn btn-success" OnClick="btnConfirm_Click" />
     <br />
     <br />
+    <Label ID="msg" runat="server"></Label>
     <asp:Label ID="lblErrorFileUpload" runat="server" ForeColor="Red"></asp:Label>
     <asp:ValidationSummary ID="ValidationSummaryAddBook" runat="server" ForeColor="Red" />
 </asp:Content>
