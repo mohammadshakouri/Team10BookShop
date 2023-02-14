@@ -3,9 +3,10 @@
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h2><%: Title %></h2>
+    <%--<h2><%: Title %></h2>--%>
+    <h2>ورود به انتشارات سیماک</h2>
 
-    <div class="row">
+    <div class="row  justify-content-md-center">
         <div class="col-md-7">
             <section id="loginForm">
                 <div class="form-horizontal">
@@ -39,6 +40,7 @@
                             </div>
                         </div>
                     </div>
+                    <br />
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <asp:Button runat="server" OnClick="LogIn" Text="ورود" CssClass="btn btn-success" />
@@ -63,4 +65,18 @@
             </section>--%>
         </div>
     </div>
+     <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />  
+    <br />
+    <br />
 </asp:Content>

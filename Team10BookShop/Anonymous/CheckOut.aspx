@@ -39,5 +39,26 @@
             <asp:Button ID="BackButton" runat="server" Text="بازگشت" cssClass="btn btn-warning" OnClick="BackButton_Click"/>
             <asp:Button ID="ConfirmButton" runat="server" Text="تأیید و پرداخت" OnClick="ConfirmButton_Click" cssClass="btn btn-success" />
         </div>
-        
+         <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />  
+    <br />
+    <br />
+     <br />  
+    <br />
+    <br />
+     <br />  
+    <br />
+    <br />
+     <br />  
+    
 </asp:Content>

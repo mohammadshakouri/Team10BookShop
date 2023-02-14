@@ -27,4 +27,14 @@
         <div>
             جمع کل هزینه پرداخت شده: <asp:Label CssClass="alert alert-success p-1" ID="PriceLabel" runat="server" Text="Label"></asp:Label> تومان
         </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 </asp:Content>
