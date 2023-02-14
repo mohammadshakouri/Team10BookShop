@@ -79,9 +79,9 @@
 
                                         <!-- Book bottom -->
                                         <div style="font-size:20px; font-weight:bolder;padding-bottom:50px" >
-                                            <div style="color:green"> موجودی:
+<%--                                            <div style="color:green"> موجودی:
                                                 <asp:Label ID="StockLabel" runat="server" Text='<%# Eval("Stock") %>' />
-                                            </div>
+                                            </div>--%>
                                         
                                             <div style="color:indianred"> 
                                                 <asp:Label ID="PriceLabel" runat="server" Text='<%# Eval("Price") %>' />

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Team10BookShop {
-    
-    
-    public partial class Book_Details {
-        
+namespace Team10BookShop
+{
+
+
+    public partial class Book_Details
+    {
+
         /// <summary>
         /// Image1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image Image1;
-        
+
         /// <summary>
         /// lbTitle control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbTitle;
-        
+
         /// <summary>
         /// lbBookID control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbBookID;
-        
+
         /// <summary>
         /// lbISBN control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbISBN;
-        
+
         /// <summary>
         /// lbCategory control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbCategory;
-        
+
         /// <summary>
         /// lbAuthor control.
         /// </summary>
@@ -65,16 +67,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbAuthor;
-        
-        /// <summary>
-        /// lbStock control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbStock;
-        
+
         /// <summary>
         /// lbPrice control.
         /// </summary>
@@ -83,7 +76,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbPrice;
-        
+
         /// <summary>
         /// btnBack control.
         /// </summary>
@@ -92,43 +85,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBack;
-        
-        /// <summary>
-        /// UpdatePanel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
-        /// <summary>
-        /// btnMinus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMinus;
-        
-        /// <summary>
-        /// txQty control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txQty;
-        
-        /// <summary>
-        /// btnPlus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPlus;
-        
+
         /// <summary>
         /// btnAddToCart control.
         /// </summary>

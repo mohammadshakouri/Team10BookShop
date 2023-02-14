@@ -53,12 +53,12 @@ namespace Team10BookShop
             int categoryID = Convert.ToInt32(row.FindControl("TextBox3") as TextBox);
             string isbn = (row.FindControl("TextBox4") as TextBox).Text;
             string author = (row.FindControl("TextBox5") as TextBox).Text;
-            int stock = Convert.ToInt32(row.FindControl("TextBox6") as TextBox);
+            //int stock = Convert.ToInt32(row.FindControl("TextBox6") as TextBox);
             decimal price = Convert.ToDecimal(row.FindControl("TextBox7") as TextBox);
             float discount = Convert.ToInt32(row.FindControl("TextBox8") as TextBox);
             DateTime startDate = Convert.ToDateTime(row.FindControl("TextBox9") as TextBox);
             DateTime endDate = Convert.ToDateTime(row.FindControl("TextBox10") as TextBox);
-            BusinessLogic.EditInventory(bookID, title, categoryID, isbn, author, stock, price);
+            BusinessLogic.EditInventory(bookID, title, categoryID, isbn, author, price);
             GridView1.EditIndex = -1;
             BindGrid();
         }

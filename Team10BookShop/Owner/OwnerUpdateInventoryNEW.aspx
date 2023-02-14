@@ -10,7 +10,7 @@
             <asp:BoundField DataField="CategoryID" HeaderText="Category ID" />
             <asp:BoundField DataField="ISBN" HeaderText="ISBN" />
             <asp:BoundField DataField="Author" HeaderText="Author" />
-            <asp:BoundField DataField="Stock" HeaderText="Stock" />
+            <%--<asp:BoundField DataField="Stock" HeaderText="Stock" />--%>
             <asp:BoundField DataField="Price" DataFormatString="{0:C}" HeaderText="Price" />
             <asp:CommandField InsertText="" NewText="" ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
         </Columns>

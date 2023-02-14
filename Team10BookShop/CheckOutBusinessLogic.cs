@@ -33,11 +33,11 @@ namespace Team10BookShop
             myBooks.SaveChanges();
         }
 
-        public void ChangeStock(int bookID)
-        {
-            Book book = myBooks.Books.Where(b => b.BookID == bookID).First<Book>();
-            book.Stock -= 1;
-            myBooks.SaveChanges();
-        }
+        //public void ChangeStock(int bookID)
+        //{
+        //    Book book = myBooks.Books.Where(b => b.BookID == bookID).First<Book>();
+        //    book.Stock -= 1;
+        //    myBooks.SaveChanges();
+        //}
     }
 }

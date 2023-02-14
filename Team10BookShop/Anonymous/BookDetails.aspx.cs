@@ -64,76 +64,77 @@ namespace Team10BookShop
             lbCategory.Text = cat.Name;
             lbISBN.Text = a.ISBN;
             lbPrice.Text = $"{a.Price} تومان";
-            lbStock.Text = a.Stock.ToString();
+            //lbStock.Text = a.Stock.ToString();
             Image1.ImageUrl = $"../Images/{a.ISBN}.jpg";
-            txQty.Text = qty.ToString();
+            //txQty.Text = qty.ToString();
         }
 
-        protected void btnMinus_Click(object sender, EventArgs e)
-        {
-            qty =(int) ViewState["qty"];
-            if (qty > 1)
-            {
-                qty--;
-            }
-            else
-            {
-                qty = 1;
-                btnMinus.Enabled = false;
-            }
-            txQty.Text = qty.ToString();
-            ViewState["qty"] = qty;
-        }
+        //protected void btnMinus_Click(object sender, EventArgs e)
+        //{
+        //    qty =(int) ViewState["qty"];
+        //    if (qty > 1)
+        //    {
+        //        qty--;
+        //    }
+        //    else
+        //    {
+        //        qty = 1;
+        //        btnMinus.Enabled = false;
+        //    }
+        //    txQty.Text = qty.ToString();
+        //    ViewState["qty"] = qty;
+        //}
 
-        protected void btnPlus_Click(object sender, EventArgs e)
-        {
-            qty = (int)ViewState["qty"];
-            if (qty >= selectedBook.Stock)
-            {
-                qty = selectedBook.Stock;
-                btnPlus.Enabled = false;
-            }
-            else
-            {
-                qty++;
-            }
-            txQty.Text = qty.ToString();
-            ViewState["qty"] = qty;
-        }
+        //protected void btnPlus_Click(object sender, EventArgs e)
+        //{
+        //    qty = (int)ViewState["qty"];
+        //    //if (qty >= selectedBook.Stock)
+        //    //{
+        //    //    qty = selectedBook.Stock;
+        //    //    btnPlus.Enabled = false;
+        //    //}
+        //    else
+        //    {
+        //        qty++;
+        //    }
+        //    txQty.Text = qty.ToString();
+        //    ViewState["qty"] = qty;
+        //}
 
-        protected void txQty_TextChanged(object sender, EventArgs e)
-        {
-            if (Convert.ToInt32(txQty.Text)<=selectedBook.Stock&& Convert.ToInt32(txQty.Text) > 0)
-            {
-                qty= Convert.ToInt32(txQty.Text);
-                ViewState["qty"] = qty;
-            }
-            txQty.Text= qty.ToString();
-        }
+        //protected void txQty_TextChanged(object sender, EventArgs e)
+        //{
+        //    if (Convert.ToInt32(txQty.Text)<=selectedBook.Stock&& Convert.ToInt32(txQty.Text) > 0)
+        //    {
+        //        qty= Convert.ToInt32(txQty.Text);
+        //        ViewState["qty"] = qty;
+        //    }
+        //    txQty.Text= qty.ToString();
+        //}
 
         protected void btnAddToCart_Click(object sender, EventArgs e)
         {
-            qty = (int)ViewState["qty"];
+            //qty = (int)ViewState["qty"];
 
-            if (qty <= selectedBook.Stock)
-            {
-                for (int i = 0; i < qty; i++)
-                {
-                    bookList.Add(selectedBook);
-                    //Label1.Text += selectedBook.BookID;
-                }
-                Session["cart"] = bookList;
+            //if (qty <= selectedBook.Stock)
+            //{
+            //    for (int i = 0; i < qty; i++)
+            //    {
+            //        
+            //        //Label1.Text += selectedBook.BookID;
+            //    }
 
-                //Response.Write("<script>confirm('Added to Cart!!')</script>");
-                Response.Redirect("~/Anonymous/CheckOut");
-            }
-            else
-            {
-                btnAddToCart.Enabled = false;
-            }
-            
 
-            
+            //Response.Write("<script>confirm('Added to Cart!!')</script>");
+
+            //}
+            //else
+            //{
+            //    btnAddToCart.Enabled = false;
+            //}
+            bookList.Add(selectedBook);
+            Response.Redirect("~/Anonymous/CheckOut");
+            Session["cart"] = bookList;
+
         }
 
         protected void btnBack_Click(object sender, EventArgs e)

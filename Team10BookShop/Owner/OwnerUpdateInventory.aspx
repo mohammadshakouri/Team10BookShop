@@ -9,11 +9,11 @@
             <asp:BoundField DataField="CategoryID" HeaderText="شناسه دسته بندی" SortExpression="CategoryID" />
             <asp:BoundField DataField="ISBN" HeaderText="شابک" SortExpression="ISBN" />
             <asp:BoundField DataField="Author" HeaderText="نویسنده" SortExpression="Author" />
-            <asp:BoundField DataField="Stock" HeaderText="موجودی" SortExpression="Stock" />
+            <%--<asp:BoundField DataField="Stock" HeaderText="موجودی" SortExpression="Stock" />--%>
             <asp:BoundField DataField="Price" HeaderText="قیمت (تومان)" SortExpression="Price" />
         </Columns>
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=.;Initial Catalog=Team10BookShop;Integrated Security=True" DeleteCommand="DELETE FROM [Book] WHERE [BookID] = @BookID" InsertCommand="INSERT INTO [Book] ([Title], [CategoryID], [ISBN], [Author], [Stock], [Price]) VALUES (@Title, @CategoryID, @ISBN, @Author, @Stock, @Price)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Book]" UpdateCommand="UPDATE [Book] SET [Title] = @Title, [CategoryID] = @CategoryID, [ISBN] = @ISBN, [Author] = @Author, [Stock] = @Stock, [Price] = @Price WHERE [BookID] = @BookID">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=.;Initial Catalog=Team10BookShop;Integrated Security=True" DeleteCommand="DELETE FROM [Book] WHERE [BookID] = @BookID" InsertCommand="INSERT INTO [Book] ([Title], [CategoryID], [ISBN], [Author], [Price]) VALUES (@Title, @CategoryID, @ISBN, @Author, @Price)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Book]" UpdateCommand="UPDATE [Book] SET [Title] = @Title, [CategoryID] = @CategoryID, [ISBN] = @ISBN, [Author] = @Author, [Price] = @Price WHERE [BookID] = @BookID">
         <DeleteParameters>
             <asp:Parameter Name="BookID" Type="Int32" />
         </DeleteParameters>
@@ -22,7 +22,7 @@
             <asp:Parameter Name="CategoryID" Type="Int32" />
             <asp:Parameter Name="ISBN" Type="String" />
             <asp:Parameter Name="Author" Type="String" />
-            <asp:Parameter Name="Stock" Type="Int32" />
+            <%--<asp:Parameter Name="Stock" Type="Int32" />--%>
             <asp:Parameter Name="Price" Type="Decimal" />
         </InsertParameters>
         <UpdateParameters>
@@ -30,7 +30,7 @@
             <asp:Parameter Name="CategoryID" Type="Int32" />
             <asp:Parameter Name="ISBN" Type="String" />
             <asp:Parameter Name="Author" Type="String" />
-            <asp:Parameter Name="Stock" Type="Int32" />
+            <%--<asp:Parameter Name="Stock" Type="Int32" />--%>
             <asp:Parameter Name="Price" Type="Decimal" />
             <asp:Parameter Name="BookID" Type="Int32" />
         </UpdateParameters>

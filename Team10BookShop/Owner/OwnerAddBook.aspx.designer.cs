@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Team10BookShop {
-    
-    
-    public partial class OwnerAddBook {
-        
+namespace Team10BookShop
+{
+
+
+    public partial class OwnerAddBook
+    {
+
         /// <summary>
         /// lblBookTitle control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblBookTitle;
-        
+
         /// <summary>
         /// txtBookTitle control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBookTitle;
-        
+
         /// <summary>
         /// RequiredFieldValidatorBookTitle control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorBookTitle;
-        
+
         /// <summary>
         /// lblCategory control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCategory;
-        
+
         /// <summary>
         /// ddCategory control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddCategory;
-        
+
         /// <summary>
         /// SqlDataSource1 control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-        
+
         /// <summary>
         /// RequiredFieldValidatorCategory control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorCategory;
-        
+
         /// <summary>
         /// lblisbn control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblisbn;
-        
+
         /// <summary>
         /// txtISBN control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtISBN;
-        
+
         /// <summary>
         /// RequiredFieldValidatorISBN control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorISBN;
-        
+
         /// <summary>
         /// RegularExpressionValidatorISBN control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorISBN;
-        
+
         /// <summary>
         /// lblAuthor control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAuthor;
-        
+
         /// <summary>
         /// txtAuthor control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAuthor;
-        
+
         /// <summary>
         /// RequiredFieldValidatorAuthor control.
         /// </summary>
@@ -137,43 +139,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorAuthor;
-        
-        /// <summary>
-        /// lblStock control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStock;
-        
-        /// <summary>
-        /// txtStock control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStock;
-        
-        /// <summary>
-        /// RequiredFieldValidatorStock control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorStock;
-        
-        /// <summary>
-        /// RangeValidatorStock control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RangeValidatorStock;
-        
+
         /// <summary>
         /// lblPrice control.
         /// </summary>
@@ -182,7 +148,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPrice;
-        
+
         /// <summary>
         /// txtPrice control.
         /// </summary>
@@ -191,7 +157,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPrice;
-        
+
         /// <summary>
         /// RequiredFieldValidatorPrice control.
         /// </summary>
@@ -200,7 +166,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorPrice;
-        
+
         /// <summary>
         /// RangeValidatorPrice control.
         /// </summary>
@@ -209,7 +175,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RangeValidator RangeValidatorPrice;
-        
+
         /// <summary>
         /// lblCover control.
         /// </summary>
@@ -218,7 +184,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCover;
-        
+
         /// <summary>
         /// FileUploadImage control.
         /// </summary>
@@ -227,7 +193,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUploadImage;
-        
+
         /// <summary>
         /// btnConfirm control.
         /// </summary>
@@ -236,7 +202,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnConfirm;
-        
+
         /// <summary>
         /// lblErrorFileUpload control.
         /// </summary>
@@ -245,7 +211,7 @@ namespace Team10BookShop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblErrorFileUpload;
-        
+
         /// <summary>
         /// ValidationSummaryAddBook control.
         /// </summary>

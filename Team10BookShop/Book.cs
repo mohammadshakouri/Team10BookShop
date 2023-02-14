@@ -31,7 +31,7 @@ namespace Team10BookShop
         [StringLength(64)]
         public string Author { get; set; }
 
-        public int Stock { get; set; }
+        //public int Stock { get; set; }
 
         public decimal Price { get; set; }
 

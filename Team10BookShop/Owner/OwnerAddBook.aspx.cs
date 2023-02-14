@@ -29,7 +29,7 @@ namespace Team10BookShop
                 b.CategoryID = Convert.ToInt32(ddCategory.SelectedValue);
                 b.ISBN = txtISBN.Text;
                 b.Author = txtAuthor.Text;
-                b.Stock = Convert.ToInt32(txtStock.Text);
+                //b.Stock = Convert.ToInt32(txtStock.Text);
                 b.Price = Convert.ToInt32(txtPrice.Text);
                 FileUploadImage.SaveAs(Server.MapPath("~/images/" + b.ISBN + System.IO.Path.GetExtension(FileUploadImage.FileName).ToLower()));
 

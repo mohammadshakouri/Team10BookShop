@@ -67,7 +67,7 @@ namespace Team10BookShop
                     foreach (Book d in cartList)
                     {
                         b.CreateOrderDetails(order.OrderID, d.BookID, d.Price);
-                        b.ChangeStock(d.BookID);
+                        //b.ChangeStock(d.BookID);
                     }
                 }
                 catch (Exception)

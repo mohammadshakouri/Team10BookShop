@@ -55,14 +55,6 @@
         <tr>
             <td style="width: 97px">
                 &nbsp;</td>
-            <td style="width: 189px; height: 30px;">موجودی:</td>
-            <td style="height: 30px">
-                <asp:Label ID="lbStock" runat="server" Text="Stock"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td style="width: 97px">
-                &nbsp;</td>
             <td style="width: 189px; height: 30px;">قیمت: </td>
             <td style="height: 30px">
                 <asp:Label ID="lbPrice" runat="server" Text="Price"></asp:Label>
@@ -73,7 +65,7 @@
                 <asp:Button ID="btnBack" runat="server" CssClass="btn btn-secondary" OnClick="btnBack_Click" Text="&lt;&lt; بازگشت" Width="88px" />
             </td>
             <td style="width: 250px">
-                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+               <%-- <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
                         <span>
                             <asp:Button ID="btnMinus" CssClass="btn btn-light" runat="server" Text="-" Width="28px" OnClick="btnMinus_Click" />
@@ -85,7 +77,7 @@
                             <asp:Button ID="btnPlus" CssClass="btn btn-light" runat="server" Text="+" OnClick="btnPlus_Click" Width="28px" />
                         </span>
                     </ContentTemplate>
-                </asp:UpdatePanel>
+                </asp:UpdatePanel>--%>
                 
             </td>
             <td>

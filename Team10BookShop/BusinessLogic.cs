@@ -9,7 +9,7 @@ namespace Team10BookShop
     public class BusinessLogic
     {
         MyBooks myBooks;
-        public static void EditInventory(int bookID, string title, int categoryID, string isbn, string author, int stock, decimal price)
+        public static void EditInventory(int bookID, string title, int categoryID, string isbn, string author, decimal price)
         {
             using(MyBooks entities = new MyBooks())
             {
@@ -19,7 +19,7 @@ namespace Team10BookShop
                 book.CategoryID = categoryID;
                 book.ISBN = isbn;
                 book.Author = author;
-                book.Stock = stock;
+                //book.Stock = stock;
                 book.Price = price;
                 entities.SaveChanges();
             }
