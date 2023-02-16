@@ -19,11 +19,17 @@
                 <dl class="dl-horizontal">
                     <dt>رمز عبور</dt>
                     <dd>
+                        
                         <asp:HyperLink CssClass="btn btn-primary" NavigateUrl="/Account/ManagePassword" Text="تغییر رمز عبور" Visible="false" ID="ChangePassword" runat="server" />
                         <asp:HyperLink CssClass="btn btn-primary" NavigateUrl="/Account/ManagePassword" Text="ساخت رمز عبور" Visible="false" ID="CreatePassword" runat="server" />
-                    </dd>
+                   <br />
+                        <br />
+                        </dd>
+                   
                     <dt>ورود از خارج</dt>
+                    
                     <dd>  
+                        
                         <asp:HyperLink CssClass="btn btn-primary" NavigateUrl="/Account/ManageLogins" Text="مدیریت" runat="server" />
                         <br /><br />
                         تعداد دفعات ورود <%: LoginsCount %> 
