@@ -24,7 +24,11 @@ namespace Team10BookShop
             Session["search"] = 0;
             //Session["userLogged"] = "";
         }
-        
+        void Application_Error(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Anonymous/404.aspx");
+        }
+
 
     }
 }

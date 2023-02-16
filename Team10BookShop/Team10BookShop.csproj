@@ -173,6 +173,7 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Anonymous\BookDetails.aspx" />
     <Content Include="Anonymous\Default.aspx" />
+    <Content Include="Anonymous\404.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Webfonts\Fa Numral Help.html" />
     <Content Include="Content\Webfonts\fontiran.css" />
@@ -402,6 +403,13 @@
     </Compile>
     <Compile Include="Anonymous\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anonymous\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anonymous\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
     </Compile>
     <Compile Include="Owner\OwnerUpdateInventory.aspx.cs">
       <DependentUpon>OwnerUpdateInventory.aspx</DependentUpon>

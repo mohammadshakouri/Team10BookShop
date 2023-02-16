@@ -140,3 +140,11 @@ footer {
     --bs-bg-opacity: 1;
     background-color: #dfedff !important;
 }
+.I404 {
+ 
+    background: #dfedff;
+    padding: 30px 40px;
+    font-size: 80px;
+    border-radius: 15px;
+    margin: 10px;
+}
