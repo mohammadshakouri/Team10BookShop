@@ -34,7 +34,7 @@ namespace Team10BookShop
                 
                 PriceLabel.Text = sum.ToString();
 
-                //cartList.Clear();
+                cartList.Clear();
             }
            
 
