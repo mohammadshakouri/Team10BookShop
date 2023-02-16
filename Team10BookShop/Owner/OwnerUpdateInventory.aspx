@@ -9,9 +9,8 @@
             <asp:BoundField DataField="BookID" HeaderText="شناسه کتاب" InsertVisible="False" ReadOnly="True" SortExpression="BookID" />
             <asp:BoundField DataField="Title" HeaderText="عنوان کتاب" SortExpression="Title" />
             <asp:BoundField DataField="CategoryID" HeaderText="شناسه دسته بندی" SortExpression="CategoryID" />
-            <asp:BoundField DataField="ISBN" HeaderText="شابک" SortExpression="ISBN" />
+            <asp:BoundField DataField="ISBN" HeaderText="شابک" SortExpression="ISBN" ReadOnly="true" />
             <asp:BoundField DataField="Author" HeaderText="نویسنده" SortExpression="Author" />
-            <%--<asp:BoundField DataField="Stock" HeaderText="موجودی" SortExpression="Stock" />--%>
             <asp:BoundField DataField="Price" HeaderText="قیمت (تومان)" SortExpression="Price" />
         </Columns>
     </asp:GridView>

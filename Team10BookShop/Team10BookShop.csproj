@@ -249,7 +249,6 @@
     <Content Include="Images\owl.png" />
     <Content Include="Anonymous\Receipt.aspx" />
     <Content Include="Anonymous\Sorry.aspx" />
-    <Content Include="Owner\OwnerUpdateInventoryNEW.aspx" />
     <Content Include="Content\Webfonts\fonts\woff2\IRANSansX-Bold.woff2" />
     <Content Include="Content\Webfonts\fonts\woff2\IRANSansX-Regular.woff2" />
     <Content Include="Content\Webfonts\fonts\woff\IRANSansX-Bold.woff" />
@@ -475,13 +474,6 @@
     <Compile Include="Owner\OwnerAddBook.aspx.designer.cs">
       <DependentUpon>OwnerAddBook.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Owner\OwnerUpdateInventoryNEW.aspx.cs">
-      <DependentUpon>OwnerUpdateInventoryNEW.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Owner\OwnerUpdateInventoryNEW.aspx.designer.cs">
-      <DependentUpon>OwnerUpdateInventoryNEW.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Anonymous\register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
@@ -517,6 +509,7 @@
     <Folder Include="Account\NewFolder1\" />
     <Folder Include="DataBaseCS\" />
     <Folder Include="Members\" />
+    <Folder Include="PDF\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

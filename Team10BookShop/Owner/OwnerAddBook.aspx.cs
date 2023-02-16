@@ -22,16 +22,16 @@ namespace Team10BookShop
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
             // Only proceed to save in database if book cover image is valid
-            if (IsValidFile())
+            if (IsValidFiles())
             {
                 b = new Book();
                 b.Title = txtBookTitle.Text;
                 b.CategoryID = Convert.ToInt32(ddCategory.SelectedValue);
                 b.ISBN = txtISBN.Text;
-                b.Author = txtAuthor.Text;
-                //b.Stock = Convert.ToInt32(txtStock.Text);
+                b.Author = txtAuthor.Text;               
                 b.Price = Convert.ToInt32(txtPrice.Text);
                 FileUploadImage.SaveAs(Server.MapPath("~/images/" + b.ISBN + System.IO.Path.GetExtension(FileUploadImage.FileName).ToLower()));
+                FileUploadpdf.SaveAs(Server.MapPath("~/PDF/" + b.ISBN + System.IO.Path.GetExtension(FileUploadpdf.FileName).ToLower()));
 
                 try
                 {
@@ -51,7 +51,7 @@ namespace Team10BookShop
             }
         }
 
-        private bool IsValidFile()
+        private bool IsValidFiles()
         {
             bool IsValid = false;
 
@@ -61,7 +61,7 @@ namespace Team10BookShop
                 // Validate file type
                 string fileExtension = System.IO.Path.GetExtension(FileUploadImage.FileName).ToLower();
                 if ((fileExtension != ".jpg") && (fileExtension != ".png"))
-                    lblErrorFileUpload.Text = "فقط پسوند های jpj و png مجاز است";
+                    lblErrorFileUpload.Text = "برای کاور کتاب فقط پسوند jpg و png و برای فایل کتاب فقط پسوند pdf مجاز است";
 
                 else
                 {
@@ -69,14 +69,38 @@ namespace Team10BookShop
                     int fileSize = FileUploadImage.PostedFile.ContentLength;
 
                     if (fileSize > 1097152)
-                        lblErrorFileUpload.Text = "حداکثر حجم فایل باید 1 مگابایت باشد";
+                        lblErrorFileUpload.Text = "حداکثر حجم تصویر کاور کتاب باید 1 مگابایت باشد";
 
                     else
-                         IsValid = true;
+                    {
+                        if (FileUploadpdf.HasFile)
+                        {
+                            // Validate file type
+                            string fileExtension1 = System.IO.Path.GetExtension(FileUploadpdf.FileName).ToLower();
+                            if (fileExtension1 != ".pdf")
+                                lblErrorFileUpload.Text = "فقط پسوند pdf برای بارگذاری فایل کتاب مجاز است";
+
+                            else
+                            {
+                                // Validate file size
+                                int fileSize1 = FileUploadpdf.PostedFile.ContentLength;
+
+                                if (fileSize > 5097152)
+                                    lblErrorFileUpload.Text = "حداکثر حجم فایل pdf کتاب باید 5 مگابایت باشد";
+
+                                IsValid = true;
+
+                            }
+                        }
+                        else
+                            lblErrorFileUpload.Text = "لطفا فایل pdf کتاب را برای بارگذاری انتخاب کنید";
+
+                    }
+
                 }
             }
             else
-                lblErrorFileUpload.Text = "لطفا تصویری برای بارگذاری انتخاب کنید";
+                lblErrorFileUpload.Text = "لطفا تصویر کاور کتاب را انتخاب کنید";
 
             return IsValid;
         }

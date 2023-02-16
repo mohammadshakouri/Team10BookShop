@@ -132,7 +132,7 @@
                                                 <asp:Label ID="PriceLabel" runat="server" Text='<%# Eval("Price") %>' />
                                                 تومان
                                             </div>
-                                            <asp:Button ID="DetailButton" class="btn btn-warning" runat="server" Text="مشاهده جزئیات" CommandName="Details" />
+                                            <asp:Button ID="DetailButton" class="btn btn-warning" runat="server" Text="مشاهده و خرید" CommandName="Details" />
                                             <br />
                                         </div>
                                         <!-- Book bottom (close) -->
