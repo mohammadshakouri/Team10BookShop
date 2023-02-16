@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI.WebControls;
+using Team10BookShop.Models;
 
 namespace Team10BookShop
 {
     public class BusinessLogic
     {
-        MyBooks myBooks;
+        Team10BookShopEntities Team10BookShopEntities;
         public static void EditInventory(int bookID, string title, int categoryID, string isbn, string author, decimal price)
         {
-            using(MyBooks entities = new MyBooks())
+            using(Team10BookShopEntities entities = new Team10BookShopEntities())
             {
                 
                 Book book = entities.Books.Where(x => x.BookID == bookID).First<Book>();
@@ -27,7 +28,7 @@ namespace Team10BookShop
 
         public static List<Book> ListBooksBy()
         {
-            using (MyBooks entities = new MyBooks())
+            using (Team10BookShopEntities entities = new Team10BookShopEntities())
             {
                     return entities.Books.ToList<Book>();
             }
@@ -35,7 +36,7 @@ namespace Team10BookShop
 
         public static void DeleteBooks(string title)
         {
-            using (MyBooks entities = new MyBooks())
+            using (Team10BookShopEntities entities = new Team10BookShopEntities())
             {
                 Book book = entities.Books.Where(z => z.Title == title).First<Book>();
                 entities.Books.Remove(book);
@@ -45,7 +46,7 @@ namespace Team10BookShop
 
         public static Book getBookByID(int bookID)
         {
-            using (MyBooks entities = new MyBooks())
+            using (Team10BookShopEntities entities = new Team10BookShopEntities())
             {
                 return entities.Books.Where
                     (x => x.BookID == bookID).ToList<Book>()[0];

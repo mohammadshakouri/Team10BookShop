@@ -5,7 +5,7 @@ using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
-using Team10BookShop.Models;
+using Team10BookShop;
 
 namespace Team10BookShop.Account
 {
@@ -26,7 +26,14 @@ namespace Team10BookShop.Account
                 manager.SendEmail(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>.");
 
                 signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
-                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                if (Request.QueryString["ReturnUrl"] == null)
+                {
+                    var ReturnUrl = "~/Anonymous/Default.aspx";
+                    IdentityHelper.RedirectToReturnUrl(ReturnUrl, Response);
+                }
+                else
+                    IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                
             }
             else 
             {

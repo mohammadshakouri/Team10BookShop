@@ -4,12 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Team10BookShop.Models;
 
 namespace Team10BookShop
 {
     public partial class Book_Details : System.Web.UI.Page
     {
-        MyBooks context;
+        Team10BookShopEntities context;
         Book selectedBook;
         int selectedID;
         Category cat;
@@ -30,7 +31,7 @@ namespace Team10BookShop
                 //txQty.Controls[0].Dispose();
 
                 qty = (int)ViewState["qty"];
-                context = new MyBooks();
+                context = new Team10BookShopEntities();
                 selectedBook = context.Books.Where(b => b.BookID.Equals(selectedID)).FirstOrDefault();
 
                 cat = new Category();

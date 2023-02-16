@@ -7,7 +7,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using Team10BookShop.Models;
+using Team10BookShop;
 
 namespace Team10BookShop
 {

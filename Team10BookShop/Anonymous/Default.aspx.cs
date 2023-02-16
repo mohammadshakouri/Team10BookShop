@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Team10BookShop.Models;
 
 namespace Team10BookShop.Anonymous
 {
@@ -15,7 +16,7 @@ namespace Team10BookShop.Anonymous
         {
             if (!IsPostBack)
             {
-                using (MyBooks mb = new MyBooks())
+                using (Team10BookShopEntities mb = new Team10BookShopEntities())
                 {
                     DataList1.DataSource = mb.Books.ToList<Book>();
                     DataList1.DataBind();
@@ -26,7 +27,7 @@ namespace Team10BookShop.Anonymous
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             SearchMessage.Text = "";
-            using (MyBooks mb = new MyBooks())
+            using (Team10BookShopEntities mb = new Team10BookShopEntities())
             {
                 if (ddCategory.SelectedItem.Text == "All")
                 {
@@ -159,7 +160,7 @@ namespace Team10BookShop.Anonymous
         protected void ddCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             SearchMessage.Text = "";
-            using (MyBooks mb = new MyBooks())
+            using (Team10BookShopEntities mb = new Team10BookShopEntities())
             {
                 int s;
                 if (ddCategory.SelectedItem.Text == "All")

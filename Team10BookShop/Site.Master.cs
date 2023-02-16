@@ -9,6 +9,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using System.Linq;
+using Team10BookShop.Models;
 
 namespace Team10BookShop
 {
@@ -18,7 +19,7 @@ namespace Team10BookShop
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
         List<Book> listBook;
-        MyBooks b;
+        Team10BookShopEntities b;
 
         protected void Page_Init(object sender, EventArgs e)
         {

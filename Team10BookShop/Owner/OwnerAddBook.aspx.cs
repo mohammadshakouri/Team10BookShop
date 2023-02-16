@@ -1,18 +1,17 @@
-﻿
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Team10BookShop.Models;
 
 namespace Team10BookShop
 {
     public partial class OwnerAddBook : System.Web.UI.Page
     {
         
-        MyBooks context = new MyBooks();
+        Team10BookShopEntities context = new Team10BookShopEntities();
         Book b;
         protected void Page_Load(object sender, EventArgs e)
         {

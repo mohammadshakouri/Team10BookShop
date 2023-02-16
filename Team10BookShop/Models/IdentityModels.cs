@@ -6,13 +6,14 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Team10BookShop.Models;
+using Team10BookShop;
 
-namespace Team10BookShop.Models
+namespace Team10BookShop
 {
     // You can add User data for the user by adding more properties to your User class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        
         public ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -30,7 +31,7 @@ namespace Team10BookShop.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("MyBooks", throwIfV1Schema: false)
+            : base("ConnectionStringForIdentity", throwIfV1Schema: false)
         {
         }
 

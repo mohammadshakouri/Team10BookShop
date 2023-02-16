@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Team10BookShop.Models;
 
 namespace Team10BookShop
 {
     public class CheckOutBusinessLogic
     {
-        MyBooks myBooks = new MyBooks();
+        Team10BookShopEntities Team10BookShopEntities = new Team10BookShopEntities();
 
         public Order CreateOrderID(string userName)
         {
@@ -15,8 +16,8 @@ namespace Team10BookShop
             {
                 UserName = userName
             };
-            myBooks.Orders.Add(order);
-            myBooks.SaveChanges();
+            Team10BookShopEntities.Orders.Add(order);
+            Team10BookShopEntities.SaveChanges();
             return order;
         }
 
@@ -29,15 +30,15 @@ namespace Team10BookShop
                 Price = price
 
             };
-            myBooks.OrderDetails.Add(orderDetail);
-            myBooks.SaveChanges();
+            Team10BookShopEntities.OrderDetails.Add(orderDetail);
+            Team10BookShopEntities.SaveChanges();
         }
 
         //public void ChangeStock(int bookID)
         //{
-        //    Book book = myBooks.Books.Where(b => b.BookID == bookID).First<Book>();
+        //    Book book = Team10BookShopEntities.Books.Where(b => b.BookID == bookID).First<Book>();
         //    book.Stock -= 1;
-        //    myBooks.SaveChanges();
+        //    Team10BookShopEntities.SaveChanges();
         //}
     }
 }

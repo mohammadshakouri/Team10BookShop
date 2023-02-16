@@ -4,7 +4,7 @@ using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
-using Team10BookShop.Models;
+using Team10BookShop;
 
 namespace Team10BookShop.Account
 {
@@ -25,6 +25,18 @@ namespace Team10BookShop.Account
 
         protected void LogIn(object sender, EventArgs e)
         {
+            var ReturnUrl="";
+            if (Request.QueryString["ReturnUrl"] == null)
+            {
+                 ReturnUrl = "~/Anonymous/Default.aspx";               
+            }
+            else
+            {
+                ReturnUrl = Request.QueryString["ReturnUrl"];
+            }
+
+            var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
+
             if (IsValid)
             {
                 // Validate the user password
@@ -38,7 +50,7 @@ namespace Team10BookShop.Account
                 switch (result)
                 {
                     case SignInStatus.Success:
-                        IdentityHelper.RedirectToReturnUrl("~/Anonymous/Default", Response);
+                        IdentityHelper.RedirectToReturnUrl(ReturnUrl, Response);
                         //Page.Response.Redirect("~/Account/Login?ReturnUrl=~/Anonymous/Browsing");
                         //if (User.IsInRole("Owner"))
                         //{

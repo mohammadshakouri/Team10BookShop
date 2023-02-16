@@ -21,7 +21,7 @@
             <td>
                 <asp:DropDownList CssClass="form-select" ID="ddCategory" runat="server" TabIndex="3" Width="250px" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="CategoryID">
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MyBooks %>" SelectCommand="SELECT [CategoryID], [Name] FROM [Category]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Team10BookShopEntities %>" SelectCommand="SELECT [CategoryID], [Name] FROM [Category]"></asp:SqlDataSource>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorCategory" runat="server" ControlToValidate="ddCategory" ErrorMessage="لطفا دسته بندی را انتخاب کنید" ForeColor="Red">*</asp:RequiredFieldValidator>
             </td>
         </tr>

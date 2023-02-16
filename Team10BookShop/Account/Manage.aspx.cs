@@ -8,7 +8,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
-using Team10BookShop.Models;
+using Team10BookShop;
 
 namespace Team10BookShop.Account
 {
