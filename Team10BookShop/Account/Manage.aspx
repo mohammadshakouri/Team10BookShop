@@ -84,5 +84,50 @@
             </div>
         </div>
     </div>
+    <br />
+    <br />
+    <div class="row text-center justify-content-center">
+        <div class="col-12"><span class="alert alert-success h2">سوابق سفارش شما</span></div>
+        <br />
+        <br />
+        <br />
+        <br />
+     
+    
+        <div class="col-12">
+            <asp:GridView ID="UserPurchaseHistory" CssClass="table table-hover" runat="server" AutoGenerateColumns="False" AllowPaging="true" OnPageIndexChanging="gdview_PageIndexChanging">
+            <Columns>                
+                <asp:TemplateField HeaderText="ردیف" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center" itemStyle-Width="50px">
+                <ItemTemplate>
+                <%# Container.DataItemIndex+1 %>
+                </ItemTemplate>
+                </asp:TemplateField>
+                <asp:BoundField DataField="UserName" HeaderText="نام کاربری" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center" itemStyle-Width="200px" />
+                
+                <asp:BoundField DataField="Title" HeaderText="عنوان کتاب" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center" itemStyle-Width="220px" />
+               <asp:TemplateField HeaderText="قیمت" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center" itemStyle-Width="250px">
+                    <ItemTemplate>
+                        <label><%# Eval("Price") %> تومان</label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="تاریخ سفارش" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center" itemStyle-Width="200px">
+                    <ItemTemplate>
+                        <label><%# showtime(Eval("OrderDate").ToString()) %></label>                                                
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="تصویر کتاب" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center" itemStyle-Width="250px">
+                    <ItemTemplate>
+                        <image src="../Images/<%# Eval("ISBN") %>.jpg" width="90" height="120"></image>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="لینک دانلود" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center" itemStyle-Width="150px">
+                    <ItemTemplate>
+                        <a class="btn btn-outline-success" href="../PDF/<%# Eval("ISBN") %>.pdf">دانلود کتاب</a>
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+            </asp:GridView>
+        </div>
+    </div>
 
 </asp:Content>

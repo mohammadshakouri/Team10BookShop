@@ -1,13 +1,13 @@
 ﻿<%@ Page Title="Forgot password" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Forgot.aspx.cs" Inherits="Team10BookShop.Account.ForgotPassword" Async="true" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h2><%: Title %>.</h2>
+    <h2>فراموشی رمز عبور</h2>
 
     <div class="row">
         <div class="col-md-8">
-            <asp:PlaceHolder id="loginForm" runat="server">
+            <asp:PlaceHolder ID="loginForm" runat="server">
                 <div class="form-horizontal">
-                    <h4>Forgot your password?</h4>
+                    <h4>رمز عبور خود را فراموش کرده اید؟</h4>
                     <hr />
                     <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
                         <p class="text-danger">
@@ -15,25 +15,46 @@
                         </p>
                     </asp:PlaceHolder>
                     <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
+                        <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">ایمیل</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
-                                CssClass="text-danger" ErrorMessage="The email field is required." />
+                                CssClass="text-danger" ErrorMessage="لطفا ایمیل خود را وارد کنید" />
                         </div>
                     </div>
+                    <br />
+                    <br />
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:Button runat="server" OnClick="Forgot" Text="Email Link" CssClass="btn btn-default" />
+                            <asp:Button runat="server" OnClick="Forgot" Text="بازیابی رمز از طریق ایمیل" CssClass="btn btn-secondary" />
                         </div>
                     </div>
                 </div>
             </asp:PlaceHolder>
             <asp:PlaceHolder runat="server" ID="DisplayEmail" Visible="false">
                 <p class="text-info">
-                    Please check your email to reset your password.
+                    لطفا صندوق ایمیل خود را برای بازیابی رمز عبور چک کنید
+               
                 </p>
             </asp:PlaceHolder>
         </div>
     </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 </asp:Content>

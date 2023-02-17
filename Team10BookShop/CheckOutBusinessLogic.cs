@@ -14,7 +14,9 @@ namespace Team10BookShop
         {
             Order order = new Order
             {
-                UserName = userName
+                UserName = userName,
+                OrderDate = DateTime.Now
+                
             };
             Team10BookShopEntities.Orders.Add(order);
             Team10BookShopEntities.SaveChanges();

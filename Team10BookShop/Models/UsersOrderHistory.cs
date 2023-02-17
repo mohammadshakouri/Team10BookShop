@@ -20,5 +20,7 @@ namespace Team10BookShop.Models
         public decimal Price { get; set; }
         public int OrderID { get; set; }
         public int OrderDetailID { get; set; }
+        public System.DateTime OrderDate { get; set; }
+        public string ISBN { get; set; }
     }
 }

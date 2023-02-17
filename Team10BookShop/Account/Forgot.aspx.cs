@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web;
+using System.Web.Providers.Entities;
 using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -12,6 +13,7 @@ namespace Team10BookShop.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
 
         protected void Forgot(object sender, EventArgs e)
@@ -19,11 +21,11 @@ namespace Team10BookShop.Account
             if (IsValid)
             {
                 // Validate the user's email address
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var manager =  Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
                 ApplicationUser user = manager.FindByName(Email.Text);
                 if (user == null || !manager.IsEmailConfirmed(user.Id))
                 {
-                    FailureText.Text = "The user either does not exist or is not confirmed.";
+                    FailureText.Text = "کاربر مورد نظر یافت نشده و یا ایمیل آن تأیید نشده است";
                     ErrorMessage.Visible = true;
                     return;
                 }
@@ -36,5 +38,7 @@ namespace Team10BookShop.Account
                 DisplayEmail.Visible = true;
             }
         }
+        
     }
 }
+

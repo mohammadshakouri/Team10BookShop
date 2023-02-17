@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,14 +11,19 @@ namespace Team10BookShop
 {
     public partial class OwnerAddBook : System.Web.UI.Page
     {
-        
         Team10BookShopEntities context = new Team10BookShopEntities();
         Book b;
         protected void Page_Load(object sender, EventArgs e)
         {
+            using (Team10BookShopEntities db = new Team10BookShopEntities())
+            {
+                var dropdownitems = db.Categories.ToList();
+                ddCategory.DataSource = dropdownitems;
+                ddCategory.DataBind();
+            }
 
         }
-
+        
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
             // Only proceed to save in database if book cover image is valid
@@ -27,16 +33,18 @@ namespace Team10BookShop
                 b.Title = txtBookTitle.Text;
                 b.CategoryID = Convert.ToInt32(ddCategory.SelectedValue);
                 b.ISBN = txtISBN.Text;
-                b.Author = txtAuthor.Text;               
+                b.Author = txtAuthor.Text;
                 b.Price = Convert.ToInt32(txtPrice.Text);
                 FileUploadImage.SaveAs(Server.MapPath("~/images/" + b.ISBN + System.IO.Path.GetExtension(FileUploadImage.FileName).ToLower()));
                 FileUploadpdf.SaveAs(Server.MapPath("~/PDF/" + b.ISBN + System.IO.Path.GetExtension(FileUploadpdf.FileName).ToLower()));
 
                 try
                 {
-                    context.Books.Add(b);
-                    context.SaveChanges();
-
+                    
+                    
+                        context.Books.Add(b);
+                        context.SaveChanges();
+                    
                     Response.Redirect("~/Anonymous/Default.aspx");
                     //msg.Attributes.Add("class", "alert alert-success alert-dismissible fade show");
                     //msg.InnerHtml = "کتاب با موفقیت اضافه شد";
@@ -49,6 +57,7 @@ namespace Team10BookShop
                 }
             }
         }
+        
 
         private bool IsValidFiles()
         {

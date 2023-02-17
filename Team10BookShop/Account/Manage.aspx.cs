@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
 using Team10BookShop;
+using Team10BookShop.Models;
+using Team10BookShop.Tools;
 
 namespace Team10BookShop.Account
 {
@@ -47,6 +50,7 @@ namespace Team10BookShop.Account
             LoginsCount = manager.GetLogins(User.Identity.GetUserId()).Count;
 
             var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
+            UserPurchaseHistoryDataBind();
 
             if (!IsPostBack)
             {
@@ -123,6 +127,32 @@ namespace Team10BookShop.Account
             manager.SetTwoFactorEnabled(User.Identity.GetUserId(), true);
 
             Response.Redirect("/Account/Manage");
+        }
+
+       
+        protected void UserPurchaseHistoryDataBind()
+        {
+            using (Team10BookShopEntities db = new Team10BookShopEntities())
+            {
+                var list = db.UsersOrderHistories.Where(u=>u.UserName==HttpContext.Current.User.Identity.Name).ToList();
+                
+                UserPurchaseHistory.DataSource = list;
+                UserPurchaseHistory.DataBind();
+            }
+            
+            
+        }
+        protected void gdview_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            
+            UserPurchaseHistory.PageIndex = e.NewPageIndex;
+            UserPurchaseHistory.DataBind();
+        }
+        protected string showtime(string _date)
+        {            
+            var aa = Convert.ToDateTime(_date);
+            string shamsi = aa.TOShamsi();
+            return shamsi;
         }
     }
 }

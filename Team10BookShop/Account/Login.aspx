@@ -52,8 +52,8 @@
                 </div>
                
                 <p>
-                     <%--Enable this once you have account confirmation enabled for password reset functionality
-                    <asp:HyperLink runat="server" ID="ForgotPasswordHyperLink" ViewStateMode="Enabled">Forgot your password?</asp:HyperLink>--%>
+                     <%--Enable this once you have account confirmation enabled for password reset functionality--%>
+                    <asp:HyperLink NavigateUrl="~/Account/Forgot.aspx" runat="server" ID="ForgotPasswordHyperLink" CssClass="btn btn-warning" ViewStateMode="Enabled">برای بازیابی رمز عبور کلیک کنید</asp:HyperLink>
                     
                 </p>
             </section>

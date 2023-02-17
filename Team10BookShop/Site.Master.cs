@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using System.Linq;
 using Team10BookShop.Models;
+using Team10BookShop.Tools;
 
 namespace Team10BookShop
 {
@@ -112,6 +113,12 @@ namespace Team10BookShop
             if (Context.User.IsInRole("Owner"))
 
                 Response.Write("اطلاعات کتاب ها");
+        }
+        protected void showtime()
+        {
+           var now = DateTime.Now;
+            string shamsi = now.TOShamsi();
+            Response.Write(shamsi);
         }
     }
 }
