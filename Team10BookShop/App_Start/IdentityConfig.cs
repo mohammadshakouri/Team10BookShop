@@ -30,6 +30,8 @@ namespace Team10BookShop
                 Credentials = credentials
             };
             MailMessage mail = new MailMessage();
+            mail.IsBodyHtml = true;
+            mail.Body = message.Body;   
             mail.From = new MailAddress(username);
             mail.To.Add(message.Destination);
             mail.Subject = message.Subject;

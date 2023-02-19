@@ -33,7 +33,7 @@ namespace Team10BookShop.Account
                 // Send email with the code and the redirect to reset password page
                 string code = manager.GeneratePasswordResetToken(user.Id);
                 string callbackUrl = IdentityHelper.GetResetPasswordRedirectUrl(code, Request);
-                manager.SendEmail(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>.");
+                manager.SendEmail(user.Id, "بازیابی رمز عبور", "<h3>انتشارات سیماک - لطفا برای بازیابی رمز عبور روی لینک مقابل کلیک کنید <a href=\"" + callbackUrl + "\">بازیابی رمز عبور</a></h3>");
                 loginForm.Visible = false;
                 DisplayEmail.Visible = true;
             }
