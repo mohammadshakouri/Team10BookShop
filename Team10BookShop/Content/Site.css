@@ -8,6 +8,16 @@ body {
     background-size: cover;
     background-attachment: fixed
 }
+.btn-info {
+    background-color: #f0fcff;
+}
+    .btn-info:hover {
+        background-color: #d3e6ff;
+    }
+.btn-outline-info:hover {
+    background-color: #d3f8ff;
+}
+
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */

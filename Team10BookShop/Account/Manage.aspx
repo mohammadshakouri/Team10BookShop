@@ -14,18 +14,11 @@
     <div class="row">
         <div class="col-md-12">
             <div class="form-horizontal">
-                <h4>تنظیمات حساب کاربری خود را مدیریت کنید</h4>
+                <span class="h4">تنظیمات حساب کاربری خود را مدیریت کنید</span>
+                                        <asp:HyperLink CssClass="btn btn-primary" NavigateUrl="/Account/ManagePassword" Text="تغییر رمز عبور" Visible="true" ID="ChangePassword" runat="server" />
+
                 <hr />
-                <dl class="dl-horizontal">
-                    <dt>رمز عبور</dt>
-                    <dd>
-                        
-                        <asp:HyperLink CssClass="btn btn-primary" NavigateUrl="/Account/ManagePassword" Text="تغییر رمز عبور" Visible="false" ID="ChangePassword" runat="server" />
-                        <asp:HyperLink CssClass="btn btn-primary" NavigateUrl="/Account/ManagePassword" Text="ساخت رمز عبور" Visible="false" ID="CreatePassword" runat="server" />
-                   <br />
-                        <br />
-                        </dd>
-                   
+                           
                    <%-- <dt>ورود از خارج</dt>
                     
                     <dd>  

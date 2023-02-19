@@ -49,105 +49,119 @@
             <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
                 <div class="container">
                     <a href="../Anonymous/Default.aspx">
-                                    <img src="../Images/LogoSimac.png" style="height: 4.0rem" /></a>
-                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+                        <img src="../Images/LogoSimac.png" style="height: 4.0rem" /></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
-                            
+
                             <li class="nav-item">
-                                <a class="nav-link" href="#">درباره ما<i class="bi-house-fill" style="margin-left:5px; font-size:1.25rem;"></i></a>
+                                <a class="nav-link" href="#"><i class="bi-house-fill" style="margin-left: 6px; font-size: 1.25rem;"></i>خانه</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">تماس با ما</a>
+                                <a class="nav-link" href="#"><i class="bi bi-telephone-fill" style="margin-left: 6px; font-size: 1.25rem;"></i>تماس با ما</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">حریم خصوصی</a>
+                                <a class="nav-link" href="#"><i class="bi bi-credit-card-2-front-fill" style="margin-left: 6px; font-size: 1.25rem;"></i>درباره ما</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><% showtime(); %></a>
+                                <a class="nav-link" href="#"></a>
                             </li>
                         </ul>
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <%--<li><a runat="server" >Cart</a></li>--%>
-                                <li class="nav-item">
-                                    <asp:UpdatePanel ID="UpdatePanel1" runat="server" href="~/Anonymous/CheckOut.aspx">
-                                        <ContentTemplate>
-                                            <asp:Button ID="cartcount" runat="server" Text="سبد خرید" class="btn btn-success" OnClick="cartcount_Click" />
-                                        </ContentTemplate>
-                                    </asp:UpdatePanel>
-                                </li>
-                                <li class="nav-item"><a class="btn btn-info" style="color:darkslateblue;" runat="server" href="~/Account/Login">ورود</a></li>
-                                <li class="nav-item"><a class="btn btn-outline-info" runat="server" href="~/Account/Register">ثبت نام</a></li>
-                                
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <%--<li><a runat="server">Cart</a></li>--%>
-                                <li class="nav-item"><a class="nav-link" runat="server" href="Owner/OwnerUpdateInventory"><% VisibleUpdateBooksForOwner(); %></a></li>
-                                <li class="nav-item"><a class="nav-link" runat="server" href="Owner/OwnerAddBook"><% VisibleAddBookForOwner(); %></a></li>
-                                <li class="nav-item"><a class="btn btn-light" runat="server" href="~/Account/Manage" title="Manage your account"><%: Context.User.Identity.GetUserName()  %> </a></li>
-                                <li class="nav-item">
-                                    <asp:UpdatePanel ID="UpdatePanel2" runat="server" href="~/Anonymous/CheckOut.aspx">
-                                        <ContentTemplate>
-                                            <asp:Button ID="cartcount1" runat="server" Text="سبد خرید" class="btn btn-success" OnClick="cartcount_Click" />
-                                        </ContentTemplate>
-                                    </asp:UpdatePanel>
-                                </li>
-                                <li class="nav-item">
-                                    <asp:LoginStatus CssClass="btn btn-danger" runat="server" LogoutAction="Redirect" LogoutText="خروج" LogoutPageUrl="Anonymous/Default" OnLoggingOut="Unnamed_LoggingOut" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
+                            <AnonymousTemplate>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <%--<li><a runat="server" >Cart</a></li>--%>
+                                    <li class="nav-item">
+                                        <asp:UpdatePanel ID="UpdatePanel1" runat="server" href="~/Anonymous/CheckOut.aspx">
+                                            <ContentTemplate>
+                                                <a class="btn btn-warning" href="../Anonymous/Checkout"><i class="bi bi-cart2" style="margin-left: 6px;"></i>سبد خرید</a>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </li>
+                                    <li class="nav-item"><a class="btn btn-info" style="color: darkslateblue;" runat="server" href="~/Account/Login">ورود</a></li>
+                                    <li class="nav-item"><a class="btn btn-outline-info" runat="server" href="~/Account/Register">ثبت نام</a></li>
+
+                                </ul>
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <%--<li><a runat="server">Cart</a></li>--%>
+                                    <li class="nav-item"><a class="nav-link" runat="server" href="Owner/OwnerUpdateInventory"><% VisibleUpdateBooksForOwner(); %></a></li>
+                                    <li class="nav-item"><a class="nav-link" runat="server" href="Owner/OwnerAddBook"><% VisibleAddBookForOwner(); %></a></li>
+                                    <li class="nav-item"><a class="btn btn-outline-success" runat="server" href="~/Account/Manage" title="Manage your account"><i class="bi bi-person-check-fill" style="margin-left: 6px;"></i><%: Context.User.Identity.GetUserName()  %> </a></li>
+                                    <li class="nav-item">
+                                        <asp:UpdatePanel ID="UpdatePanel2" runat="server" href="~/Anonymous/CheckOut.aspx">
+                                            <ContentTemplate>
+                                                <a class="btn btn-warning" href="../Anonymous/Checkout"><i class="bi bi-cart2" style="margin-left: 6px;"></i>سبد خرید</a>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </li>
+                                    <li class="nav-item">
+                                        <asp:LoginStatus CssClass="btn btn-danger" runat="server" LogoutAction="Redirect" LogoutText="خروج" LogoutPageUrl="Anonymous/Default" OnLoggingOut="Unnamed_LoggingOut" />
+                                    </li>
+                                </ul>
+                            </LoggedInTemplate>
+                        </asp:LoginView>
                     </div>
-                    
+
 
                 </div>
             </nav>
-          
+
         </header>
-        <div style="padding-bottom:4.0rem">
+        <div style="padding-bottom: 4.0rem">
         </div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-                
-           
+
+
         </div>
-        <footer >
-         <div class="container-fluid" style="background-color:#495370;">
-               <br />
-             <div class="container">
-			<div class="row d-flex text-center justify-content-around align-items-center">
-                <div class="col-md-4 col-sm-6"><div class="social-links">
-					<h4 style="text-align:start">آدرس:</h4>
-                    <p style="text-align:start">تهران 
+        <footer>
+            <div class="container-fluid" style="background-color: #495370;">
+                <br />
+                <div class="container">
+                    <div class="row d-flex text-center justify-content-around align-items-center">
+                        <div style="border-right: 1px solid white;" class="col-md-4 col-sm-6">
+                            
+                                <h4 style="text-align: start">آدرس:</h4>
+                                <p style="text-align: start">
+                                    تهران 
                         - خیابان پاسداران 
                         - خیابان نیستان سوم 
-                        - پلاک 6 - واحد4</p>
-                    <br />
-                    <h4 style="text-align:start">راه های ارتباطی با ما: </h4>
-                    <br />
-                    <p style="text-align:start">ایمیل: info@simacnashr.ir</p>
-                    <p style="text-align:start">تلفن تماس: 021-22876308</p>
-				</div> <!-- .social-links --></div>
-                 <div class="col-md-4 col-sm-6"> <address>
-					<p>ایران | شیراز  <br><a href="tel:354543543">09032309534</a> <br> <a href="">info@webrubik.com</a></p>
-				</address></div>
-                 <div class="col-md-4 col-sm-6"> سلام به همه</div>
-                
-               <hr />
-                <p class="copy">تمامی حقوق برای انتشارات سییماک محفوظ است</p>		       
+                        - پلاک 6 - واحد4
+                                </p>
+                                <br />
+                                <h4 style="text-align: start">راه های ارتباطی با ما: </h4>
+                                <br />
+                                <p style="text-align: start">ایمیل: info@simacnashr.ir</p>
+                                <p style="text-align: start">تلفن تماس: 22876308-021</p>
+                            
+                            <!-- .social-links -->
+                        </div>
+                        <div style="border-right: 1px solid white;" class="col-md-4 col-sm-6">
+                            <h4>وبسایت های مرتبط با ما</h4>
+                            <br />
+                            <p>از سایر سامانه های مرتبط با سیماک نیر بازدید کنید</p>
+                            <a style="color: lightskyblue; font-size: 1.3rem;" href="https://info.simac.ir/" target="_blank">info.simac.ir</a><br />
+                            <a style="color: lightskyblue; font-size: 1.3rem;" href="https://gilan.simac.ir/" target="_blank">gilan.simac.ir</a><br />
+                            <a style="color: lightskyblue; font-size: 1.3rem;" href="https://kerman.simac.ir/" target="_blank">kerman.simac.ir</a><br />
+                            <a style="color: lightskyblue; font-size: 1.3rem;" href="https://tamrin.simac.ir/" target="_blank">tamrin.simac.ir</a><br />
+                        </div>
+                        <div style="border-right: 1px solid white;" class="col-md-4 col-sm-6">
+                            <h4>نماد اعتماد الکترونیک</h4>
+                        </div>
+
+                        <hr />
+                        <p class="copy"> تمامی حقوق برای انتشارات سیماک محفوظ است 1401</p>
+                    </div>
                 </div>
-			</div>
-				</div>
-			
-            </footer> <!-- .site-footer -->   
+            </div>
+
+        </footer>
+        <!-- .site-footer -->
     </form>
 </body>
 </html>
