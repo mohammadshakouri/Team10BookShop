@@ -26,7 +26,7 @@
                         <br />
                         </dd>
                    
-                    <dt>ورود از خارج</dt>
+                   <%-- <dt>ورود از خارج</dt>
                     
                     <dd>  
                         
@@ -34,7 +34,7 @@
                         <br /><br />
                         تعداد دفعات ورود <%: LoginsCount %> 
 
-                    </dd>
+                    </dd>--%>
                     <%--
                         Phone Numbers can used as a second factor of verification in a two-factor authentication system.
                         See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>

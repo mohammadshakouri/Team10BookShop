@@ -15,7 +15,7 @@ namespace Team10BookShop.Account
             RegisterHyperLink.NavigateUrl = "Register";
             //Enable this once you have account confirmation enabled for password reset functionality
             //ForgotPasswordHyperLink.NavigateUrl = "Forgot";
-           // OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
+            //OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
             var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
             if (!String.IsNullOrEmpty(returnUrl))
             {
@@ -49,8 +49,7 @@ namespace Team10BookShop.Account
 
                 switch (result)
                 {
-                    case SignInStatus.Success:
-                        IdentityHelper.RedirectToReturnUrl(ReturnUrl, Response);
+                    case SignInStatus.Success: IdentityHelper.RedirectToReturnUrl(ReturnUrl, Response);
                         //Page.Response.Redirect("~/Account/Login?ReturnUrl=~/Anonymous/Browsing");
                         //if (User.IsInRole("Owner"))
                         //{
@@ -63,8 +62,7 @@ namespace Team10BookShop.Account
                     case SignInStatus.RequiresVerification:
                         Response.Redirect(String.Format("/Account/TwoFactorAuthenticationSignIn?ReturnUrl={0}&RememberMe={1}", 
                                                         Request.QueryString["ReturnUrl"],
-                                                        RememberMe.Checked),
-                                          true);
+                                                        RememberMe.Checked),true);
                         break;
                     case SignInStatus.Failure:
                     default:

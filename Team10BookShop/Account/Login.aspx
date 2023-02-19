@@ -44,28 +44,26 @@
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <asp:Button runat="server" OnClick="LogIn" Text="ورود" CssClass="btn btn-success" />
-                            <span class="p-x-5">
-                            </span>
-                            <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled" CssClass="contact3-form btn btn-light">ثبت نام به عنوان عضو جدید</asp:HyperLink>
-                        </div>
+                            <span class="p-x-5"></span>
+                            <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled" CssClass="btn btn-outline-success">ثبت نام</asp:HyperLink>
+                            <asp:HyperLink NavigateUrl="~/Account/Forgot.aspx" runat="server" ID="ForgotPasswordHyperLink" CssClass="btn btn-outline-info" ViewStateMode="Enabled">فراموشی رمز عبور</asp:HyperLink>
+
+                        </div>                       
                     </div>
                 </div>
-               
+
                 <p>
-                     <%--Enable this once you have account confirmation enabled for password reset functionality--%>
-                    <asp:HyperLink NavigateUrl="~/Account/Forgot.aspx" runat="server" ID="ForgotPasswordHyperLink" CssClass="btn btn-warning" ViewStateMode="Enabled">برای بازیابی رمز عبور کلیک کنید</asp:HyperLink>
-                    
+                    <%--Enable this once you have account confirmation enabled for password reset functionality--%>
                 </p>
             </section>
         </div>
 
         <div class="col-md-5">
-           <%-- <section id="socialLoginForm">
+            <%-- <section id="socialLoginForm">
                 <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
             </section>--%>
         </div>
     </div>
-     <br />
     <br />
     <br />
     <br />
@@ -76,7 +74,8 @@
     <br />
     <br />
     <br />
-    <br />  
+    <br />
+    <br />
     <br />
     <br />
 </asp:Content>

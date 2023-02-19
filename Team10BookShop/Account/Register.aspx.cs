@@ -25,7 +25,7 @@ namespace Team10BookShop.Account
                 string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
                 manager.SendEmail(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>.");
 
-                signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
+                signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
                 if (Request.QueryString["ReturnUrl"] == null)
                 {
                     var ReturnUrl = "~/Anonymous/Default.aspx";
@@ -33,11 +33,24 @@ namespace Team10BookShop.Account
                 }
                 else
                     IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-                
+
             }
             else 
             {
-                ErrorMessage.Text = result.Errors.FirstOrDefault();
+               if( result.Errors.FirstOrDefault().StartsWith("Name"))
+                {
+                    ErrorMessage.Text = "این ایمیل قبلا در  سامانه ثبت شده است";
+                }
+                else if(result.Errors.FirstOrDefault().StartsWith("Passwords"))
+                {
+                    ErrorMessage.Text = "رمز عبور باید حداقل شامل 4 کاراکتر باشد";
+                }
+                else
+                {
+                    ErrorMessage.Text = result.Errors.FirstOrDefault();
+                }
+            
+               
             }
         }
     }

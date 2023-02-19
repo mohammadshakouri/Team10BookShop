@@ -12,8 +12,9 @@
     <title><%: Page.Title %>- My Book Shop</title>
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" integrity="sha384-WJUUqfoMmnfkBLne5uxXj+na/c7sesSJ32gI7GfCk4zO4GthUKhSEGyvQ839BC51" crossorigin="anonymous">
+    </asp:PlaceHolder>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="~/Content/bootstrap-5.3.0-alpha1-dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
     <link href="~/Content/Webfonts/style.css" rel="stylesheet" />
     <link href="~/Content/Webfonts/style.css" rel="stylesheet" />
     <link href="Content/Site.css" rel="stylesheet" />
@@ -56,7 +57,7 @@
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="#">درباره ما</a>
+                                <a class="nav-link" href="#">درباره ما<i class="bi-house-fill" style="margin-left:5px; font-size:1.25rem;"></i></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">تماس با ما</a>
@@ -79,9 +80,9 @@
                                         </ContentTemplate>
                                     </asp:UpdatePanel>
                                 </li>
-
-                                <li class="nav-item"><a class="btn btn-warning" runat="server" href="~/Account/Register">ثبت نام</a></li>
-                                <li class="nav-item"><a class="btn btn-outline-warning" style="color:darkslateblue;" runat="server" href="~/Account/Login">ورود</a></li>
+                                <li class="nav-item"><a class="btn btn-info" style="color:darkslateblue;" runat="server" href="~/Account/Login">ورود</a></li>
+                                <li class="nav-item"><a class="btn btn-outline-info" runat="server" href="~/Account/Register">ثبت نام</a></li>
+                                
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
@@ -120,20 +121,31 @@
         </div>
         <footer >
          <div class="container-fluid" style="background-color:#495370;">
-               
+               <br />
+             <div class="container">
 			<div class="row d-flex text-center justify-content-around align-items-center">
-                <div class="col-md-4"><div class="social-links">
-					سلام به همه
+                <div class="col-md-4 col-sm-6"><div class="social-links">
+					<h4 style="text-align:start">آدرس:</h4>
+                    <p style="text-align:start">تهران 
+                        - خیابان پاسداران 
+                        - خیابان نیستان سوم 
+                        - پلاک 6 - واحد4</p>
+                    <br />
+                    <h4 style="text-align:start">راه های ارتباطی با ما: </h4>
+                    <br />
+                    <p style="text-align:start">ایمیل: info@simacnashr.ir</p>
+                    <p style="text-align:start">تلفن تماس: 021-22876308</p>
 				</div> <!-- .social-links --></div>
-                 <div class="col-md-4"> <address>
+                 <div class="col-md-4 col-sm-6"> <address>
 					<p>ایران | شیراز  <br><a href="tel:354543543">09032309534</a> <br> <a href="">info@webrubik.com</a></p>
 				</address></div>
-                 <div class="col-md-4"> سلام به همه</div>
+                 <div class="col-md-4 col-sm-6"> سلام به همه</div>
+                
                <hr />
                 <p class="copy">تمامی حقوق برای انتشارات سییماک محفوظ است</p>		       
                 </div>
 			</div>
-				
+				</div>
 			
             </footer> <!-- .site-footer -->   
     </form>

@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Configuration;
+using System.Net;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -12,11 +15,30 @@ namespace Team10BookShop
 {
     public class EmailService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
+        public async Task SendAsync(IdentityMessage message)
         {
-            // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+            // Plug in your email service here to send an email.            
+            string username = "no.Reply.AutoSender1400@gmail.com";
+            string password = "afxl qhke nxzr dewm";
+            ICredentialsByHost credentials = new NetworkCredential(username, password);
+
+            SmtpClient smtpClient = new SmtpClient()
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                Credentials = credentials
+            };
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress(username);
+            mail.To.Add(message.Destination);
+            mail.Subject = message.Subject;
+            mail.Body = message.Body;
+            await smtpClient.SendMailAsync(mail);
+
+            //return Task.FromResult(0);      
         }
+        
     }
 
     public class SmsService : IIdentityMessageService
@@ -54,8 +76,7 @@ namespace Team10BookShop
                 RequireDigit = false,
                 RequireLowercase = false,
                 RequireUppercase = false,
-            };
-            manager.UserTokenProvider = new EmailTokenProvider<ApplicationUser>(); //for password reset
+            };           
 
             // Register two factor authentication providers. This application uses Phone and Emails as a step of receiving a code for verifying the user
             // You can write your own provider and plug it in here.
