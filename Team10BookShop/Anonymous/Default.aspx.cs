@@ -41,15 +41,13 @@ namespace Team10BookShop.Anonymous
                         switch (ddDetails.SelectedValue)
                         {
                             case "نویسنده":
-
-                                catid = Convert.ToInt32(ddCategory.SelectedValue);
+                                
                                 var q = from x in mb.Books where x.Author.Contains(txtSearch.Text) select x;
                                 DataList1.DataSource = q.ToList();
                                 DataList1.DataBind();                              
 
                                 break;
                             case "عنوان":
-                                catid = Convert.ToInt32(ddCategory.SelectedValue);
                                 var q1 = from x in mb.Books where x.Title.Contains(txtSearch.Text) select x;
 
                                 DataList1.DataSource = q1.ToList();
@@ -57,7 +55,6 @@ namespace Team10BookShop.Anonymous
 
                                 break;
                             case "شابک":
-                                catid = Convert.ToInt32(ddCategory.SelectedValue);
                                 var q2 = from x in mb.Books where x.ISBN.Contains(txtSearch.Text) select x;
 
                                 DataList1.DataSource = q2.ToList();
@@ -74,8 +71,7 @@ namespace Team10BookShop.Anonymous
                         switch (ddDetails.SelectedValue)
                         {
                             case "نویسنده":
-                                var q = from x in mb.Books where x.Author.Contains(txtSearch.Text) && x.CategoryID == catid select x;
-                               
+                                var q = from x in mb.Books where x.Author.Contains(txtSearch.Text) && x.CategoryID == catid select x;                               
                                     DataList1.DataSource = q.ToList();
                                     DataList1.DataBind();                               
                                 break;

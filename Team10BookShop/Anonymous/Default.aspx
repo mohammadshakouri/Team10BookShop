@@ -51,34 +51,51 @@
             <!-- Search bar -->
             <div id="booksearchbar" class="jumbotron">
                 <div class="container">
-                    <div class="row text-center">
-                        <div class="col-sm-4">
+                  <div class="row text-center justify-content-center">
+                        <div class="col-md-12">
 
                             <span id="search-title">دنبال چه کتابی می گردی؟</span>
 
-                        </div>
-                        <div class="col-sm-2">
 
-                            <asp:DropDownList AutoPostBack="true" CssClass="form-select" ID="ddCategory" runat="server" TabIndex="3" Width="180px" DataTextField="Name" DataValueField="CategoryID" OnSelectedIndexChanged="ddCategory_SelectedIndexChanged">
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <div class="col-lg-4">
+                            <span class="bg-secondary p-2 rounded text-light">دسته بندی مورد نظر خود را انتخاب کنید</span>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="col-lg-6">
+
+                            <asp:DropDownList AutoPostBack="true" CssClass="form-select" ID="ddCategory" runat="server" TabIndex="3" DataTextField="Name" DataValueField="CategoryID" OnSelectedIndexChanged="ddCategory_SelectedIndexChanged">
                             </asp:DropDownList>
-                        </div>
-                        <div class="col-sm-2">
-
-                            <asp:DropDownList ID="ddDetails" class="form-select dropdown-toggle" runat="server" Width="200px">
-                                <asp:ListItem>نویسنده</asp:ListItem>
-                                <asp:ListItem>عنوان</asp:ListItem>
-                                <asp:ListItem>شابک</asp:ListItem>
-                            </asp:DropDownList>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="input-group">
-                                <asp:TextBox ID="txtSearch" runat="server" class="form-control" placeholder="ازاین جا پیدا کن"></asp:TextBox>
-                                <asp:Button ID="btnSearch" runat="server" class="btn btn-light rounded" Text="جستجو" OnClick="btnSearch_Click" />
-                            </div>
+                            <br />
                         </div>
                     </div>
                     <br />
+                  
+                     <div class="row text-center justify-content-center">
+                    <div class="col-lg-5">
+                        <span class="bg-secondary p-2 rounded text-light">ابتدا معیار جستجو را انتخاب و سپس جستجو کنید</span><br />
+                        <br />
+                    </div>
+                    <div class="col-lg-2">
+
+                        <asp:DropDownList ID="ddDetails" class="form-select dropdown-toggle" runat="server">
+                            <asp:ListItem>نویسنده</asp:ListItem>
+                            <asp:ListItem>عنوان</asp:ListItem>
+                            <asp:ListItem>شابک</asp:ListItem>
+                        </asp:DropDownList>
+                        <br />
+                    </div>
+
+                    <div class="col-lg-5">
+
+                        <asp:TextBox ID="txtSearch" runat="server" class="form-control d-inline" placeholder="نوع فیلتر را انتخاب و سپس جستجو کنید"></asp:TextBox>
+                        <asp:Button ID="btnSearch" runat="server" class="btn btn-light rounded" Text="جستجو" OnClick="btnSearch_Click" />
+                    </div>
+                </div>
 
                 </div>
 
