@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,152 +21,92 @@ namespace Team10BookShop.Anonymous
                 {
                     DataList1.DataSource = mb.Books.ToList<Book>();
                     DataList1.DataBind();
+
+                    var dropdownitems = mb.Categories.ToList();  
+                    ddCategory.DataSource=dropdownitems;                  
+                    ddCategory.DataBind();
+                    ddCategory.Items.Insert(0, new ListItem { Text = "همه" });
+                   
+                    
                 }
             }
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
-        {
-            SearchMessage.Text = "";
+        {           
             using (Team10BookShopEntities mb = new Team10BookShopEntities())
             {
-                if (ddCategory.SelectedItem.Text == "All")
-                {
-                    if (txtSearch.Text != null)
-                    {
+                if (ddCategory.SelectedItem.Text == "همه")
+                {                    
                         switch (ddDetails.SelectedValue)
                         {
-                            case "Author":
+                            case "نویسنده":
 
                                 catid = Convert.ToInt32(ddCategory.SelectedValue);
                                 var q = from x in mb.Books where x.Author.Contains(txtSearch.Text) select x;
-                                if (q.Count() != 0)
-                                {
-                                    DataList1.DataSource = q.ToList();
-                                    DataList1.DataBind();
-                                }
-                                else
-                                {
-                                    SearchMessage.Text = "Failed";
-                                    Response.Write("<script>confirm('Record Does Not Exist !!')</script>");
-                                }
+                                DataList1.DataSource = q.ToList();
+                                DataList1.DataBind();                              
+
                                 break;
-                            case "Title":
+                            case "عنوان":
                                 catid = Convert.ToInt32(ddCategory.SelectedValue);
                                 var q1 = from x in mb.Books where x.Title.Contains(txtSearch.Text) select x;
-                                if (q1.Count() != 0)
-                                {
-                                    DataList1.DataSource = q1.ToList();
-                                    DataList1.DataBind();
-                                }
-                                else
-                                {
-                                    SearchMessage.Text = "Failed";
-                                    Response.Write("<script>confirm('Record Does Not Exist !!')</script>");
-                                }
-                                break;
-                            case "ISBN":
-                                catid = Convert.ToInt32(ddCategory.SelectedValue);
-                                var q2 = from x in mb.Books where x.ISBN == (txtSearch.Text) select x;
-                                if (q2.Count() != 0)
-                                {
-                                    DataList1.DataSource = q2.ToList();
-                                    DataList1.DataBind();
-                                }
-                                else
-                                {
-                                    SearchMessage.Text = "Failed";
-                                    Response.Write("<script>confirm('Record Does Not Exist !!')</script>");
-                                }
-                                break;
 
-                            default:
-                                SearchMessage.Text = "Failed";
-                                Response.Write("<script>confirm('Record Does Not Exist !!')</script>");
+                                DataList1.DataSource = q1.ToList();
+                                DataList1.DataBind();
+
+                                break;
+                            case "شابک":
+                                catid = Convert.ToInt32(ddCategory.SelectedValue);
+                                var q2 = from x in mb.Books where x.ISBN.Contains(txtSearch.Text) select x;
+
+                                DataList1.DataSource = q2.ToList();
+                                DataList1.DataBind();                            
+
                                 break;
                         }
-                    }
-                    else
-                    {
-                        SearchMessage.Text = "Failed";
-                        Response.Write("<script>confirm('Record Does Not Exist !!')</script>");
-                    }
+                   
                 }
                 else
                 {
                     catid = Convert.ToInt32(ddCategory.SelectedValue);
-                    if (txtSearch.Text != null)
-                    {
+                    
                         switch (ddDetails.SelectedValue)
                         {
-                            case "Author":
-
-                                //catid = Convert.ToInt32(CategoryDL.SelectedValue);
+                            case "نویسنده":
                                 var q = from x in mb.Books where x.Author.Contains(txtSearch.Text) && x.CategoryID == catid select x;
-                                if (q.Count() != 0)
-                                {
+                               
                                     DataList1.DataSource = q.ToList();
-                                    DataList1.DataBind();
-                                }
-                                else
-                                {
-                                    SearchMessage.Text = "Failed";
-                                    Response.Write("<script>confirm('Record Does Not Exist !!')</script>");
-                                }
+                                    DataList1.DataBind();                               
                                 break;
-                            case "Title":
-                                //catid = Convert.ToInt32(CategoryDL.SelectedValue);
+
+                            case "عنوان":
                                 var q1 = from x in mb.Books where x.Title.Contains(txtSearch.Text) && x.CategoryID == catid select x;
-                                if (q1.Count() != 0)
-                                {
-                                    DataList1.DataSource = q1.ToList();
+                                DataList1.DataSource = q1.ToList();
                                     DataList1.DataBind();
-                                }
-                                else
-                                {
-                                    SearchMessage.Text = "Failed";
-                                    Response.Write("<script>confirm('Record Does Not Exist !!')</script>");
-                                }
                                 break;
-                            case "ISBN":
-                                //catid = Convert.ToInt32(CategoryDL.SelectedValue);
-                                var q2 = from x in mb.Books where x.ISBN == (txtSearch.Text) && x.CategoryID == catid select x;
-                                if (q2.Count() != 0)
-                                {
+
+                            case "شابک":
+                                var q2 = from x in mb.Books where x.ISBN.Contains(txtSearch.Text) && x.CategoryID == catid select x;                              
                                     DataList1.DataSource = q2.ToList();
-                                    DataList1.DataBind();
-                                }
-                                else
-                                {
-                                    SearchMessage.Text = "Failed";
-                                    Response.Write("<script>confirm('Record Does Not Exist !!')</script>");
-                                }
+                                    DataList1.DataBind();                            
                                 break;
-
-                            default:
-                                SearchMessage.Text = "Failed";
-                                Response.Write("<script>confirm('Record Does Not Exist !!')</script>");
-                                break;
+                            
                         }
-                    }
-
-                    else
-                    {
-                        SearchMessage.Text = "Failed";
-                        Response.Write("<script>confirm('Record Does Not Exist !!')</script>");
-                    }
+                    
+                    
                 }
             }
         }
         protected void ddCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SearchMessage.Text = "";
             using (Team10BookShopEntities mb = new Team10BookShopEntities())
             {
                 int s;
-                if (ddCategory.SelectedItem.Text == "All")
+                if (ddCategory.SelectedItem.Text == "همه")
                 {
                     var q4 = from x in mb.Books select x;
+                    
                     if (q4.Count() != 0)
                     {
                         DataList1.DataSource = q4.ToList();
@@ -176,11 +117,9 @@ namespace Team10BookShop.Anonymous
                 {
                     s = Convert.ToInt32(ddCategory.SelectedValue);
                     var q4 = from x in mb.Books where (x.CategoryID == s) select x;
-                    if (q4.Count() != 0)
-                    {
                         DataList1.DataSource = q4.ToList();
                         DataList1.DataBind();
-                    }
+                   
                 }
 
             }

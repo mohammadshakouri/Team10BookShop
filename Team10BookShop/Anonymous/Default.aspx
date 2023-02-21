@@ -59,31 +59,27 @@
                         </div>
                         <div class="col-sm-2">
 
+                            <asp:DropDownList AutoPostBack="true" CssClass="form-select" ID="ddCategory" runat="server" TabIndex="3" Width="180px" DataTextField="Name" DataValueField="CategoryID" OnSelectedIndexChanged="ddCategory_SelectedIndexChanged">
+                            </asp:DropDownList>
+                        </div>
+                        <div class="col-sm-2">
+
                             <asp:DropDownList ID="ddDetails" class="form-select dropdown-toggle" runat="server" Width="200px">
                                 <asp:ListItem>نویسنده</asp:ListItem>
                                 <asp:ListItem>عنوان</asp:ListItem>
                                 <asp:ListItem>شابک</asp:ListItem>
                             </asp:DropDownList>
                         </div>
-                        <div class="col-sm-2">
-                            <asp:DropDownList ID="ddCategory" class="form-select dropdown-toggle" runat="server" Width="200px" DataTextField="Name" DataValueField="Name" AutoPostBack="True" OnSelectedIndexChanged="ddCategory_SelectedIndexChanged">
-                                <asp:ListItem Value="0">همه دسته ها</asp:ListItem>
-                                <asp:ListItem Value="1">کودک</asp:ListItem>
-                                <asp:ListItem Value="2">تکنولوژی</asp:ListItem>
-                                <asp:ListItem Value="3">غیر داستانی</asp:ListItem>
-                                <asp:ListItem Value="4">مالی</asp:ListItem>
-                            </asp:DropDownList>
-                        </div>
+
                         <div class="col-sm-4">
-                             <div class="input-group">
-                        <asp:TextBox ID="txtSearch" runat="server" class="form-control" placeholder="ازاین جا پیدا کن"></asp:TextBox>
-                        <asp:Button ID="btnSearch" runat="server" class="btn btn-light rounded" Text="جستجو" OnClick="btnSearch_Click" />
-                        <asp:Label ID="SearchMessage" runat="server" ForeColor="Black"></asp:Label>
-                    </div>
+                            <div class="input-group">
+                                <asp:TextBox ID="txtSearch" runat="server" class="form-control" placeholder="ازاین جا پیدا کن"></asp:TextBox>
+                                <asp:Button ID="btnSearch" runat="server" class="btn btn-light rounded" Text="جستجو" OnClick="btnSearch_Click" />
+                            </div>
                         </div>
                     </div>
                     <br />
-                   
+
                 </div>
 
                 <!-- Books display-->
@@ -91,15 +87,15 @@
                     <div class="container-fluid">
                     </div>
                     <asp:Panel ID="Panel1" CssClass="bg-dedicated" runat="server">
-
-                        <asp:DataList ID="DataList1" runat="server" DataKeyField="BookID" HorizontalAlign="Center" RepeatColumns="3" RepeatDirection="Horizontal" OnItemCommand="DataList1_ItemCommand" CellPadding="50" CellSpacing="50">
+                        <asp:DataList ID="DataList1" runat="server" DataKeyField="BookID" HorizontalAlign="Center" RepeatColumns="4" RepeatDirection="Horizontal" OnItemCommand="DataList1_ItemCommand" CellPadding="30" CellSpacing="30">
                             <ItemTemplate>
                                 <div class="book-wrapper" style="text-align: center;">
                                     <div>
 
                                         <!-- Book top-->
-                                        <div class="book-top"><image src="../Images/<%# Eval("ISBN") %>.jpg" width="180" height="210" />
-                                           
+                                        <div class="book-top">
+                                            <image src="../Images/<%# Eval("ISBN") %>.jpg" width="180" height="210" />
+
                                             <br />
                                             <br />
                                             <asp:Label ID="TitleLabel" runat="server" Text='<%# Eval("Title") %>' Style="font-size: 20px; color: lightseagreen; font-weight: bolder;" />
@@ -149,6 +145,7 @@
                 <!-- Book display (close)-->
             </div>
             </div>
+            <br />
             <br />
             <br />
             <br />

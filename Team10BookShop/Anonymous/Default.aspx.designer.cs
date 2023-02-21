@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Team10BookShop.Anonymous {
-    
-    
-    public partial class Default {
-        
+namespace Team10BookShop.Anonymous
+{
+
+
+    public partial class Default
+    {
+
         /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
@@ -20,16 +22,7 @@ namespace Team10BookShop.Anonymous {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
-        /// <summary>
-        /// ddDetails control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddDetails;
-        
+
         /// <summary>
         /// ddCategory control.
         /// </summary>
@@ -38,7 +31,16 @@ namespace Team10BookShop.Anonymous {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddCategory;
-        
+
+        /// <summary>
+        /// ddDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddDetails;
+
         /// <summary>
         /// txtSearch control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Team10BookShop.Anonymous {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSearch;
-        
+
         /// <summary>
         /// btnSearch control.
         /// </summary>
@@ -56,16 +58,7 @@ namespace Team10BookShop.Anonymous {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearch;
-        
-        /// <summary>
-        /// SearchMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label SearchMessage;
-        
+
         /// <summary>
         /// Panel1 control.
         /// </summary>
@@ -74,7 +67,7 @@ namespace Team10BookShop.Anonymous {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel1;
-        
+
         /// <summary>
         /// DataList1 control.
         /// </summary>
