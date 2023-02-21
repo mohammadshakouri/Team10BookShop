@@ -61,7 +61,7 @@ namespace Team10BookShop.Account
                 }
                 else
                 {
-                    CreatePassword.Visible = true;
+                    //CreatePassword.Visible = true;
                     ChangePassword.Visible = false;
                 }
 

@@ -23,11 +23,19 @@ namespace Team10BookShop.Account
             if (code != null && userId != null)
             {
                 var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                var result = manager.ConfirmEmail(userId, code);
-                if (result.Succeeded)
+                var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
+                if (signinManager.UserManager.FindByEmail(userId) != null)
                 {
-                    successPanel.Visible = true;
-                    return;
+                    var result = manager.ConfirmEmail(userId, code);
+                    if (result.Succeeded)
+                    {
+                        successPanel.Visible = true;
+                        return;
+                    }
+                }
+                else {
+                    successPanel.Visible = false;
+                    errorPanel.Visible = true;
                 }
             }
             successPanel.Visible = false;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web;
 using System.Web.UI;
 using Microsoft.AspNet.Identity;
@@ -25,10 +26,10 @@ namespace Team10BookShop.Account
 
         protected void LogIn(object sender, EventArgs e)
         {
-            var ReturnUrl="";
+            var ReturnUrl = "";
             if (Request.QueryString["ReturnUrl"] == null)
             {
-                 ReturnUrl = "~/Anonymous/Default.aspx";               
+                ReturnUrl = "~/Anonymous/Default.aspx";
             }
             else
             {
@@ -40,16 +41,27 @@ namespace Team10BookShop.Account
             if (IsValid)
             {
                 // Validate the user password
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var usermanager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
                 var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
 
                 // This doen't count login failures towards account lockout
                 // To enable password failures to trigger lockout, change to shouldLockout: true
-                var result = signinManager.PasswordSignIn(Email.Text, Password.Text, RememberMe.Checked, shouldLockout: false);
+                if (signinManager.UserManager.FindByEmail(Email.Text) != null)
+                {
+                    var userid = usermanager.FindByEmail(Email.Text).Id;
+                    if (!usermanager.IsEmailConfirmed(userid))
+                    {
+                        FailureText.Text = "لطفا ابتدا حساب کاربری خود را از طریق ایمیل ارسال شده هنگام ثبت نام فعال کنید";
+                        ErrorMessage.Visible = true;
+                        return;
+                    }
+                }
 
+                var result = signinManager.PasswordSignIn(Email.Text, Password.Text, RememberMe.Checked, shouldLockout: false);
                 switch (result)
                 {
-                    case SignInStatus.Success: IdentityHelper.RedirectToReturnUrl(ReturnUrl, Response);
+                    case SignInStatus.Success:
+                        IdentityHelper.RedirectToReturnUrl(ReturnUrl, Response);
                         //Page.Response.Redirect("~/Account/Login?ReturnUrl=~/Anonymous/Browsing");
                         //if (User.IsInRole("Owner"))
                         //{
@@ -60,9 +72,9 @@ namespace Team10BookShop.Account
                         Response.Redirect("/Account/Lockout");
                         break;
                     case SignInStatus.RequiresVerification:
-                        Response.Redirect(String.Format("/Account/TwoFactorAuthenticationSignIn?ReturnUrl={0}&RememberMe={1}", 
+                        Response.Redirect(String.Format("/Account/TwoFactorAuthenticationSignIn?ReturnUrl={0}&RememberMe={1}",
                                                         Request.QueryString["ReturnUrl"],
-                                                        RememberMe.Checked),true);
+                                                        RememberMe.Checked), true);
                         break;
                     case SignInStatus.Failure:
                     default:

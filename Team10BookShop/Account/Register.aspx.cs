@@ -23,16 +23,16 @@ namespace Team10BookShop.Account
                 // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                 string code = manager.GenerateEmailConfirmationToken(user.Id);
                 string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
-                manager.SendEmail(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>.");
-
-                signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
-                if (Request.QueryString["ReturnUrl"] == null)
-                {
-                    var ReturnUrl = "~/Anonymous/Default.aspx";
-                    IdentityHelper.RedirectToReturnUrl(ReturnUrl, Response);
-                }
-                else
-                    IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                manager.SendEmail(user.Id, "فعالسازی حساب کاربری", "<h3>انتشارات سیماک - لطفا برای فعالسازی حساب کاربری خود روی فعالسازی کلیک کنید <a href=\"" + callbackUrl + "\">فعالسازی حساب کاربری</a></h3>");
+                ErrorMessage.Text = "لطفا برای فعالسازی حساب کاربری به ایمیل خود مراجعه کنید";
+                //signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
+                //if (Request.QueryString["ReturnUrl"] == null)
+                //{
+                //    var ReturnUrl = "~/Anonymous/Default.aspx";
+                //    IdentityHelper.RedirectToReturnUrl(ReturnUrl, Response);
+                //}
+                //else
+                //    IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
 
             }
             else 
