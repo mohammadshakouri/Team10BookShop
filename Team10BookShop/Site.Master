@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <meta name="description" content="">
+    <meta name="description" content="simacnashr">
     <meta name="author" content="">
 
     <title><%: Page.Title %>- My Book Shop</title>
@@ -48,25 +48,26 @@
 
             <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
                 <div class="container">
-                    <a href="../Anonymous/Default.aspx">
-                        <img src="../Images/LogoSimac.png" style="height: 4.0rem" /></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent">
+                    <a class="navbar-brand" href="../Anonymous/Default.aspx">
+                        <img src="../Images/LogoSimac.png" style="height: 4.0rem" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
+                        <ul class="navbar-nav mr-auto me-auto mb-2 mb-lg-0  align-items-center">
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="bi-house-fill" style="margin-left: 6px; font-size: 1.25rem;"></i>خانه</a>
+                                <a class="nav-link" href="../Anonymous/Default.aspx">خانه</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="bi bi-telephone-fill" style="margin-left: 6px; font-size: 1.25rem;"></i>تماس با ما</a>
+                                <a class="nav-link" href="../Contact.aspx">تماس با ما</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="bi bi-credit-card-2-front-fill" style="margin-left: 6px; font-size: 1.25rem;"></i>درباره ما</a>
+                                <a class="nav-link" href="../About.aspx">درباره ما</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"></a>
+                                <a class="nav-link" href="#">قوانین</a>
                             </li>
                         </ul>
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
@@ -106,10 +107,10 @@
                         </asp:LoginView>
                     </div>
 
-
+                   
                 </div>
             </nav>
-
+          
         </header>
         <div style="padding-bottom: 4.0rem">
         </div>
@@ -125,20 +126,20 @@
                 <div class="container">
                     <div class="row d-flex text-center justify-content-around align-items-center">
                         <div style="border-right: 1px solid white;" class="col-md-4 col-sm-6">
-                            
-                                <h4 style="text-align: start">آدرس:</h4>
-                                <p style="text-align: start">
-                                    تهران 
+
+                            <h4 style="text-align: start">آدرس:</h4>
+                            <p style="text-align: start">
+                                تهران 
                         - خیابان پاسداران 
                         - خیابان نیستان سوم 
                         - پلاک 6 - واحد4
-                                </p>
-                                <br />
-                                <h4 style="text-align: start">راه های ارتباطی با ما: </h4>
-                                <br />
-                                <p style="text-align: start">ایمیل: info@simacnashr.ir</p>
-                                <p style="text-align: start">تلفن تماس: 22876308-021</p>
-                            
+                            </p>
+                            <br />
+                            <h4 style="text-align: start">راه های ارتباطی با ما: </h4>
+                            <br />
+                            <p style="text-align: start">ایمیل: info@simacnashr.ir</p>
+                            <p style="text-align: start">تلفن تماس: 22876308-021</p>
+
                             <!-- .social-links -->
                         </div>
                         <div style="border-right: 1px solid white;" class="col-md-4 col-sm-6">
@@ -155,7 +156,7 @@
                         </div>
 
                         <hr />
-                        <p class="copy"> تمامی حقوق برای انتشارات سیماک محفوظ است 1401</p>
+                        <p class="copy">تمامی حقوق برای انتشارات سیماک محفوظ است 1401</p>
                     </div>
                 </div>
             </div>

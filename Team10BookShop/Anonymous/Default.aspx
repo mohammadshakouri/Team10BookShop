@@ -51,7 +51,7 @@
             <!-- Search bar -->
             <div id="booksearchbar" class="jumbotron">
                 <div class="container">
-                  <div class="row text-center justify-content-center">
+                  <div class="row text-center">
                         <div class="col-md-12">
 
                             <span id="search-title">دنبال چه کتابی می گردی؟</span>
@@ -61,12 +61,12 @@
                         <br />
                         <br />
                         <br />
-                        <div class="col-lg-4">
-                            <span class="bg-secondary p-2 rounded text-light">دسته بندی مورد نظر خود را انتخاب کنید</span>
+                        <div class="col-md-8 col-lg-5">
+                            <span class="bg-secondary p-2 rounded text-light d-inline-block">دسته بندی خود را انتخاب کنید تا فیلتر اعمال شود</span>
                         </div>
                         <br />
                         <br />
-                        <div class="col-lg-6">
+                        <div class="col-md-4 col-lg-2">
 
                             <asp:DropDownList AutoPostBack="true" CssClass="form-select" ID="ddCategory" runat="server" TabIndex="3" DataTextField="Name" DataValueField="CategoryID" OnSelectedIndexChanged="ddCategory_SelectedIndexChanged">
                             </asp:DropDownList>
@@ -75,12 +75,12 @@
                     </div>
                     <br />
                   
-                     <div class="row text-center justify-content-center">
-                    <div class="col-lg-5">
-                        <span class="bg-secondary p-2 rounded text-light">ابتدا معیار جستجو را انتخاب و سپس جستجو کنید</span><br />
+                     <div class="row text-center">
+                    <div class="col-md-8 col-lg-5">
+                        <span class="bg-secondary p-2 rounded text-light d-inline-block">ابتدا معیار جستجو را انتخاب و سپس جستجو کنید</span><br />
                         <br />
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-md-4 col-lg-2">
 
                         <asp:DropDownList ID="ddDetails" class="form-select dropdown-toggle" runat="server">
                             <asp:ListItem>نویسنده</asp:ListItem>
@@ -98,7 +98,8 @@
                 </div>
 
                 </div>
-
+                <br />
+              
                 <!-- Books display-->
                 <div id="booksdisplay" class="jumbotron">
                     <div class="container-fluid">
