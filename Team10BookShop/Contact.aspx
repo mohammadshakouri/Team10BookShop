@@ -1,17 +1,26 @@
 ﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="Team10BookShop.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
-    <h3>Your contact page.</h3>
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
+    <br />
+    <h1 class="text-center">تماس با ما</h1>
+    <div class="bg-light rounded p-3">
+    <h3>از طریق راه های زیر با ما در ارتباط باشید</h3>
+    <br />
+    <br />
+    <p class="h4">تلفن تماس :</p>
+    <p class="h4">22876308-021</p>
+    <br />
+    <br />
+    <p class="h4">ایمیل:</p>
+    <p class="h4">Info@simacnashr.ir</p>
 
-    <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-    </address>
+    <br />
+    <br />
+    <p class="h4">آدرس:</p>
+    <p class="h4">خیابان پاسداران - نیستان سوم - پلاک 6</p>
+    <br />
+        </div>
+    <br />
+    <br />
+    <br />
 </asp:Content>
