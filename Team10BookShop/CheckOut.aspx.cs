@@ -73,21 +73,21 @@ namespace Team10BookShop
                 }
                 catch (Exception)
                 {
-                    Page.Response.Redirect("~/Anonymous/Sorry");
+                    Page.Response.Redirect("~/Sorry");
                 }
             }
             else
             {
-                Page.Response.Redirect("~/Account/Login?ReturnUrl=~/Anonymous/CheckOut");
+                Page.Response.Redirect("~/Account/Login?ReturnUrl=~/CheckOut");
             }
 
-            Page.Response.Redirect("~/Anonymous/Receipt");
+            Page.Response.Redirect("~/Receipt");
 
         }
 
         protected void BackButton_Click(object sender, EventArgs e)
         {
-            Page.Response.Redirect("~/Anonymous/Default");
+            Page.Response.Redirect("~/Default");
         }
     }
 }

@@ -130,7 +130,7 @@ namespace Team10BookShop.Anonymous
                 Book b = BusinessLogic.getBookByID(bookID);
                 Session["id"] = b.BookID;
                 Console.WriteLine("book id is:" + Session["id"]);
-                Response.Redirect("~/Anonymous/BookDetails.aspx");
+                Response.Redirect("~/BookDetails.aspx");
             }
         }
         

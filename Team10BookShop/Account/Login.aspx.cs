@@ -29,7 +29,7 @@ namespace Team10BookShop.Account
             var ReturnUrl = "";
             if (Request.QueryString["ReturnUrl"] == null)
             {
-                ReturnUrl = "~/Anonymous/Default.aspx";
+                ReturnUrl = "~/Default.aspx";
             }
             else
             {
@@ -62,7 +62,7 @@ namespace Team10BookShop.Account
                 {
                     case SignInStatus.Success:
                         IdentityHelper.RedirectToReturnUrl(ReturnUrl, Response);
-                        //Page.Response.Redirect("~/Account/Login?ReturnUrl=~/Anonymous/Browsing");
+                        //Page.Response.Redirect("~/Account/Login?ReturnUrl=~/Browsing");
                         //if (User.IsInRole("Owner"))
                         //{
                         //    Session["userLogged"] = "Owner";

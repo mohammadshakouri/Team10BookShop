@@ -47,7 +47,7 @@ namespace Team10BookShop
             }
             catch(Exception)
             {
-                Response.Redirect("~/Anonymous/Default.aspx");
+                Response.Redirect("~/Default.aspx");
             }
            
         }
@@ -133,7 +133,7 @@ namespace Team10BookShop
             //    btnAddToCart.Enabled = false;
             //}
             bookList.Add(selectedBook);
-            Response.Redirect("~/Anonymous/CheckOut");
+            Response.Redirect("~/CheckOut");
             Session["cart"] = bookList;
 
         }

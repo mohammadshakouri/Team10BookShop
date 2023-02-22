@@ -19,7 +19,7 @@
                 <h2 class="h1">صفحه مورد نظر یافت نشد!</h2>
                 <br>
                 <br>
-                <a href="/Anonymous/Default.aspx" class="btn btn-primary">بازگشت به صفحه نخست</a>
+                <a href="/Default.aspx" class="btn btn-primary">بازگشت به صفحه نخست</a>
                 <br />
                 <br />
                 <br />

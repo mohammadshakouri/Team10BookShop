@@ -94,7 +94,7 @@ namespace Team10BookShop
 
         protected void cartcount_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Anonymous/CheckOut.aspx");
+            Response.Redirect("~/CheckOut.aspx");
         }
 
         protected void ButtonSearch_OnClick(object Source, EventArgs e)

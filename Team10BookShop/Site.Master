@@ -47,7 +47,7 @@
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
                 <div class="container">
-                    <a class="navbar-brand" href="../Anonymous/Default.aspx">
+                    <a class="navbar-brand" href="../Default.aspx">
                         <img src="../Images/LogoSimac.png" style="height: 4.0rem" />
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,7 +57,7 @@
                         <ul class="navbar-nav mr-auto me-auto mb-2 mb-lg-0  align-items-center">
 
                             <li class="nav-item">
-                                <a class="nav-link" href="../Anonymous/Default.aspx">خانه</a>
+                                <a class="nav-link" href="../Default.aspx">خانه</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="../Contact.aspx">تماس با ما</a>
@@ -66,12 +66,13 @@
                         </ul>
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <AnonymousTemplate>
+                  
                                 <ul class="nav navbar-nav navbar-right">
                                     <%--<li><a runat="server" >Cart</a></li>--%>
                                     <li class="nav-item">
-                                        <asp:UpdatePanel ID="UpdatePanel1" runat="server" href="~/Anonymous/CheckOut.aspx">
+                                        <asp:UpdatePanel ID="UpdatePanel1" runat="server" href="~/CheckOut.aspx">
                                             <ContentTemplate>
-                                                <a class="btn btn-warning" href="../Anonymous/Checkout"><i class="bi bi-cart2" style="margin-left: 6px;"></i>سبد خرید</a>
+                                                <a class="btn btn-warning" href="../Checkout"><i class="bi bi-cart2" style="margin-left: 6px;"></i>سبد خرید</a>
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
                                     </li>
@@ -87,14 +88,14 @@
                                     <li class="nav-item"><a class="nav-link" runat="server" href="Owner/OwnerAddBook"><% VisibleAddBookForOwner(); %></a></li>
                                     <li class="nav-item"><a class="btn btn-outline-success" runat="server" href="~/Account/Manage" title="Manage your account"><i class="bi bi-person-check-fill" style="margin-left: 6px;"></i><%: Context.User.Identity.GetUserName()  %> </a></li>
                                     <li class="nav-item">
-                                        <asp:UpdatePanel ID="UpdatePanel2" runat="server" href="~/Anonymous/CheckOut.aspx">
+                                        <asp:UpdatePanel ID="UpdatePanel2" runat="server" href="~/CheckOut.aspx">
                                             <ContentTemplate>
-                                                <a class="btn btn-warning" href="../Anonymous/Checkout"><i class="bi bi-cart2" style="margin-left: 6px;"></i>سبد خرید</a>
+                                                <a class="btn btn-warning" href="../Checkout"><i class="bi bi-cart2" style="margin-left: 6px;"></i>سبد خرید</a>
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
                                     </li>
                                     <li class="nav-item">
-                                        <asp:LoginStatus CssClass="btn btn-danger" runat="server" LogoutAction="Redirect" LogoutText="خروج" LogoutPageUrl="Anonymous/Default" OnLoggingOut="Unnamed_LoggingOut" />
+                                        <asp:LoginStatus CssClass="btn btn-danger" runat="server" LogoutAction="Redirect" LogoutText="خروج" LogoutPageUrl="~/Default.aspx" OnLoggingOut="Unnamed_LoggingOut" />
                                     </li>
                                 </ul>
                             </LoggedInTemplate>

@@ -28,7 +28,7 @@ namespace Team10BookShop.Account
                 //signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
                 //if (Request.QueryString["ReturnUrl"] == null)
                 //{
-                //    var ReturnUrl = "~/Anonymous/Default.aspx";
+                //    var ReturnUrl = "~/Default.aspx";
                 //    IdentityHelper.RedirectToReturnUrl(ReturnUrl, Response);
                 //}
                 //else

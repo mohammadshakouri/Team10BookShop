@@ -170,9 +170,9 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="Anonymous\BookDetails.aspx" />
-    <Content Include="Anonymous\Default.aspx" />
-    <Content Include="Anonymous\404.aspx" />
+    <Content Include="BookDetails.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="404.aspx" />
     <Content Include="Content\bootstrap-5.3.0-alpha1-dist\css\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-5.3.0-alpha1-dist\css\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-5.3.0-alpha1-dist\css\bootstrap-grid.rtl.css" />
@@ -234,7 +234,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Account\Web.config" />
-    <Content Include="Anonymous\CheckOut.aspx" />
+    <Content Include="CheckOut.aspx" />
     <Content Include="Images\9780060555665.jpg" />
     <Content Include="Images\9780062377210.jpg" />
     <Content Include="Images\9780062390851.jpg" />
@@ -286,8 +286,8 @@
     <Content Include="Images\LOGO.jpeg" />
     <Content Include="Images\LOGO.png" />
     <Content Include="Images\owl.png" />
-    <Content Include="Anonymous\Receipt.aspx" />
-    <Content Include="Anonymous\Sorry.aspx" />
+    <Content Include="Receipt.aspx" />
+    <Content Include="Sorry.aspx" />
     <EntityDeploy Include="Models\EBookModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EBookModel.Designer.cs</LastGenOutput>
@@ -327,7 +327,7 @@
     <Content Include="Content\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Owner\OwnerAddBook.aspx" />
-    <Content Include="Anonymous\register.aspx" />
+    <Content Include="register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -468,18 +468,18 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Anonymous\Default.aspx.cs">
+    <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Anonymous\Default.aspx.designer.cs">
+    <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Anonymous\404.aspx.cs">
+    <Compile Include="404.aspx.cs">
       <DependentUpon>404.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Anonymous\404.aspx.designer.cs">
+    <Compile Include="404.aspx.designer.cs">
       <DependentUpon>404.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetRole.cs">
@@ -523,11 +523,11 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Anonymous\BookDetails.aspx.cs">
+    <Compile Include="BookDetails.aspx.cs">
       <DependentUpon>BookDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Anonymous\BookDetails.aspx.designer.cs">
+    <Compile Include="BookDetails.aspx.designer.cs">
       <DependentUpon>BookDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Book.cs">
@@ -547,26 +547,26 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Anonymous\CheckOut.aspx.cs">
+    <Compile Include="CheckOut.aspx.cs">
       <DependentUpon>CheckOut.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Anonymous\CheckOut.aspx.designer.cs">
+    <Compile Include="CheckOut.aspx.designer.cs">
       <DependentUpon>CheckOut.aspx</DependentUpon>
     </Compile>
     <Compile Include="CheckOutBusinessLogic.cs" />
-    <Compile Include="Anonymous\Receipt.aspx.cs">
+    <Compile Include="Receipt.aspx.cs">
       <DependentUpon>Receipt.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Anonymous\Receipt.aspx.designer.cs">
+    <Compile Include="Receipt.aspx.designer.cs">
       <DependentUpon>Receipt.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Anonymous\Sorry.aspx.cs">
+    <Compile Include="Sorry.aspx.cs">
       <DependentUpon>Sorry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Anonymous\Sorry.aspx.designer.cs">
+    <Compile Include="Sorry.aspx.designer.cs">
       <DependentUpon>Sorry.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
@@ -584,11 +584,11 @@
       <DependentUpon>OwnerAddBook.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Anonymous\register.aspx.cs">
+    <Compile Include="register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Anonymous\register.aspx.designer.cs">
+    <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
@@ -619,6 +619,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Anonymous\" />
     <Folder Include="PDF\" />
   </ItemGroup>
   <ItemGroup>

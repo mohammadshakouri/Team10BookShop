@@ -27,7 +27,7 @@ namespace Team10BookShop
         }
         void Application_Error(object sender, EventArgs e)
         {
-            Response.Redirect("~/Anonymous/404.aspx");
+            Response.Redirect("~/404.aspx");
         }
 
 
