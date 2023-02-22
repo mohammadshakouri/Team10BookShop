@@ -325,6 +325,10 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="PDF\1131335133.pdf" />
+    <Content Include="PDF\12312312.pdf" />
+    <Content Include="PDF\343212.pdf" />
+    <Content Include="PDF\531363.pdf" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Owner\OwnerAddBook.aspx" />
     <Content Include="register.aspx" />
@@ -620,7 +624,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Anonymous\" />
-    <Folder Include="PDF\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
