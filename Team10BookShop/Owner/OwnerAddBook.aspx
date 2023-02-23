@@ -53,7 +53,7 @@
             <td>
                 <asp:Label ID="lblPrice" runat="server" Text="قیمت"></asp:Label></td>
             <td>
-                <asp:TextBox ID="txtPrice" runat="server" TabIndex="7" TextMode="Number" Width="250px" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox ID="txtPrice" runat="server" MaxLength="8" TabIndex="7" TextMode="Number" Width="250px" CssClass="form-control"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorPrice" runat="server" ControlToValidate="txtPrice" ErrorMessage="لطفا قیمت را وارد کنید" ForeColor="Red">*</asp:RequiredFieldValidator>
                 <%--                     <asp:RangeValidator ID="RangeValidatorPrice" runat="server" ControlToValidate="txtPrice" ErrorMessage="حداقل قیمت باید مقدار 1 باشد" ForeColor="Red" MaximumValue="10000" MinimumValue="1" Type="Integer">*</asp:RangeValidator></td>--%>
         </tr>

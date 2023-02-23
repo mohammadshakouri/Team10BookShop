@@ -18,8 +18,8 @@ namespace Team10BookShop
         public async Task SendAsync(IdentityMessage message)
         {
             // Plug in your email service here to send an email.            
-            string username = "no.Reply.AutoSender1400@gmail.com";
-            string password = "afxl qhke nxzr dewm";
+            string username = "simac.noreply@gmail.com";
+            string password = "akqv ttgk fspx gwtw";
             ICredentialsByHost credentials = new NetworkCredential(username, password);
 
             SmtpClient smtpClient = new SmtpClient()

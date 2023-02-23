@@ -38,6 +38,7 @@ namespace Team10BookShop.Account
 
         protected void Page_Load()
         {
+            MsgNoOrder.Visible = false;
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
 
             HasPhoneNumber = String.IsNullOrEmpty(manager.GetPhoneNumber(User.Identity.GetUserId()));
@@ -135,7 +136,10 @@ namespace Team10BookShop.Account
             using (Team10BookShopEntities db = new Team10BookShopEntities())
             {
                 var list = db.UsersOrderHistories.Where(u=>u.UserName==HttpContext.Current.User.Identity.Name).ToList();
-                
+                if (list.Count==0)
+                {
+                    MsgNoOrder.Visible = true;
+                }
                 UserPurchaseHistory.DataSource = list;
                 UserPurchaseHistory.DataBind();
             }
