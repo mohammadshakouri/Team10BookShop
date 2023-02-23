@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Cart Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CheckOut.aspx.cs" Inherits="Team10BookShop.CheckOut" %>
+﻿<%@ Page Title="سبد خرید" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CheckOut.aspx.cs" Inherits="Team10BookShop.CheckOut" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>سبد خرید</h1>
     <div class="panel panel-default">

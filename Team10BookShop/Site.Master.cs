@@ -112,7 +112,7 @@ namespace Team10BookShop
         {
             if (Context.User.IsInRole("Owner"))
 
-                Response.Write("اطلاعات کتاب ها");
+                Response.Write("ویرایش کتاب ها");
         }
         protected void showtime()
         {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OwnerAddBook.aspx.cs" Inherits="Team10BookShop.OwnerAddBook" %>
+﻿<%@ Page Title="افزودن کتاب" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OwnerAddBook.aspx.cs" Inherits="Team10BookShop.OwnerAddBook" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 

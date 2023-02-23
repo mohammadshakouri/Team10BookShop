@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Receipt" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Receipt.aspx.cs" Inherits="Team10BookShop.Receipt" %>
+﻿<%@ Page Title="رسید خرید" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Receipt.aspx.cs" Inherits="Team10BookShop.Receipt" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
         
     <h4 class="alert alert-success text-center">سفارش شما با موفقیت ثبت شد</h4><br />

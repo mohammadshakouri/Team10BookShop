@@ -9,16 +9,15 @@
     <meta name="description" content="simacnashr">
     <meta name="author" content="">
 
-    <title><%: Page.Title %>- My Book Shop</title>
+    <title><%: Page.Title %> - انتشارات سیماک</title>
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link href="~/Content/bootstrap-5.3.0-alpha1-dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
     <link href="~/Content/Webfonts/style.css" rel="stylesheet" />
-    <link href="~/Content/Webfonts/style.css" rel="stylesheet" />
-    <link href="Content/Site.css" rel="stylesheet" />
-    <link href="Images/icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="~/Images/FavIcon.png" />
     <link href="~/Content/Webfonts/style.css" rel="stylesheet" />
 </head>
 <body>

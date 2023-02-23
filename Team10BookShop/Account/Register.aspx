@@ -1,7 +1,6 @@
-﻿<%@ Page Title="Register" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Team10BookShop.Account.Register" %>
+﻿<%@ Page Title="ثبت نام" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Team10BookShop.Account.Register" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-   <%-- <h2><%: Title %></h2>--%>
     <h2>ثبت نام در انتشارات سیماک</h2>
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />

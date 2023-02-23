@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BookDetails.aspx.cs" Inherits="Team10BookShop.Book_Details" %>
+﻿<%@ Page Title="مشخصات کتاب" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BookDetails.aspx.cs" Inherits="Team10BookShop.Book_Details" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div style=" background: #eff5fd; border-radius: 10px; padding: 20px;">
     <table class="">

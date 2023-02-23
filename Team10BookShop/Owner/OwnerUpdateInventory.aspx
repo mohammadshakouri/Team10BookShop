@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OwnerUpdateInventory.aspx.cs" Inherits="Team10BookShop.OwnerUpdateInventory" %>
+﻿<%@ Page Title="ویرایش کتاب ها" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OwnerUpdateInventory.aspx.cs" Inherits="Team10BookShop.OwnerUpdateInventory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row text-center justify-content-center">
         
