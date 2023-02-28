@@ -282,10 +282,6 @@
     <Content Include="Images\9781616205676.jpg" />
     <Content Include="Images\9781619634480.jpg" />
     <Content Include="Images\9781911015222.jpg" />
-    <Content Include="Images\ICON.png" />
-    <Content Include="Images\LOGO.jpeg" />
-    <Content Include="Images\LOGO.png" />
-    <Content Include="Images\owl.png" />
     <Content Include="Receipt.aspx" />
     <Content Include="Sorry.aspx" />
     <EntityDeploy Include="Models\EBookModel.edmx">
