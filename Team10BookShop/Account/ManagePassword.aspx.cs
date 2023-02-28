@@ -91,7 +91,12 @@ namespace Team10BookShop.Account
         {
             foreach (var error in result.Errors)
             {
-                ModelState.AddModelError("", error);
+                if(error.ToString().StartsWith("Passwords"))
+                    ModelState.AddModelError("", "حداقل طول رمز عبور باید 4 کاراکتر باشد");
+                else if(error.ToString().StartsWith("Incorrect"))
+                    ModelState.AddModelError("", "رمز عبور فعلی وارد شده صحیح نمی باشد");
+                else
+                    ModelState.AddModelError("", error);
             }
         }
     }
