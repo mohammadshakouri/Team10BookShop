@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="ورود" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Team10BookShop.Account.Login" Async="true" %>
 
+<%@ Register Assembly="MSCaptcha" Namespace="MSCaptcha" TagPrefix="cap" %>
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
@@ -39,8 +40,19 @@
                                 <asp:Label runat="server" AssociatedControlID="RememberMe">اطلاعات ورود را بخاطر داشته باش</asp:Label>
                             </div>
                         </div>
+                        <br />
                     </div>
-                    <br />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <cap:CaptchaControl ID="captcha1" runat="server" CaptchaLength="6" CaptchaHeight="50" CaptchaWidth="200" CaptchaLineNoise="Medium" CaptchaMinTimeout="3" CaptchaMaxTimeout="240" ForeColor="Blue" BackColor="Wheat" CaptchaChars="ABCDEFGHIJKLMNOPQRSTUVWX123456789" Height="46px" Width="200px" />
+                            <br />
+                            <asp:Label runat="server" AssociatedControlID="TxtCaptcha" CssClass="col-md-4 control-label">مقدار کادر بالا را وارد کنید</asp:Label>
+                            <asp:TextBox runat="server" ID="TxtCaptcha" CssClass="form-control" MaxLength="6" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="TxtCaptcha" CssClass="text-danger" ErrorMessage="لطفا مقدار کادر بالا را  وارد کنید" />
+                            <br />
+                            <br />
+                        </div>
+                    </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <asp:Button runat="server" OnClick="LogIn" Text="ورود" CssClass="btn btn-success" />
@@ -48,7 +60,7 @@
                             <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled" CssClass="btn btn-outline-success">ثبت نام</asp:HyperLink>
                             <asp:HyperLink NavigateUrl="~/Account/Forgot.aspx" runat="server" ID="ForgotPasswordHyperLink" CssClass="btn btn-outline-info" ViewStateMode="Enabled">فراموشی رمز عبور</asp:HyperLink>
 
-                        </div>                       
+                        </div>
                     </div>
                 </div>
 

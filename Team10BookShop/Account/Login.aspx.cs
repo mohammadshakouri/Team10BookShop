@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
@@ -38,8 +39,27 @@ namespace Team10BookShop.Account
 
             var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
 
+
+            
+              
+            
+
+
             if (IsValid)
             {
+
+
+                captcha1.ValidateCaptcha(TxtCaptcha.Text.Trim());
+
+                if (!captcha1.UserValidated)
+                {
+
+                    FailureText.Text = "لطفا مقدار داخل کادر را به طور صحیح وارد کنید";
+                    ErrorMessage.Visible = true;
+                    return;
+                }
+
+
                 // Validate the user password
                 var usermanager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
                 var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
@@ -82,6 +102,7 @@ namespace Team10BookShop.Account
                         ErrorMessage.Visible = true;
                         break;
                 }
+
             }
         }
     }
