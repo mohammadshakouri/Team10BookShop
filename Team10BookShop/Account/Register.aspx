@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="ثبت نام" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Team10BookShop.Account.Register" %>
 
+<%@ Register Assembly="MSCaptcha" Namespace="MSCaptcha" TagPrefix="cap" %>
+
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2>ثبت نام در انتشارات سیماک</h2>
     <p class="text-danger">
@@ -39,6 +41,21 @@
         <br />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
+
+                <cap:CaptchaControl ID="captcha1" runat="server" CssClass="d-inline" CaptchaLength="5" CaptchaHeight="50" CaptchaWidth="200" CaptchaLineNoise="none" CaptchaMinTimeout="3" CaptchaMaxTimeout="240" ForeColor="Blue" BackColor="Wheat" CaptchaChars="ABCDEFGHIJKLMNOPQRSTUVWX123456789" Height="46px" Width="200px" />
+                <a class="d-inline mx-2" href="../account/Register.aspx"><i class="bi bi-arrow-clockwise" style="font-size: 2.5rem; vertical-align: middle;"></i></a>
+
+                <br />
+                <br />
+                <asp:Label runat="server" AssociatedControlID="TxtCaptcha" CssClass="col-md-6 control-label">مقدار کادر بالا را وارد کنید</asp:Label>
+                <asp:TextBox runat="server" ID="TxtCaptcha" CssClass="form-control" MaxLength="5" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="TxtCaptcha" CssClass="text-danger" ErrorMessage="لطفا مقدار کادر بالا را  وارد کنید" />
+                <br />
+                <br />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="ثبت نام" CssClass="btn btn-info" />
             </div>
         </div>
@@ -54,7 +71,7 @@
     <br />
     <br />
     <br />
-    <br />  
+    <br />
     <br />
     <br />
 </asp:Content>

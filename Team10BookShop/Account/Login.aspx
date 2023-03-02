@@ -44,10 +44,14 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <cap:CaptchaControl ID="captcha1" runat="server" CaptchaLength="6" CaptchaHeight="50" CaptchaWidth="200" CaptchaLineNoise="Medium" CaptchaMinTimeout="3" CaptchaMaxTimeout="240" ForeColor="Blue" BackColor="Wheat" CaptchaChars="ABCDEFGHIJKLMNOPQRSTUVWX123456789" Height="46px" Width="200px" />
+
+                            <cap:CaptchaControl ID="captcha1" runat="server" CssClass="d-inline" CaptchaLength="5" CaptchaHeight="50" CaptchaWidth="200" CaptchaLineNoise="none" CaptchaMinTimeout="3" CaptchaMaxTimeout="240" ForeColor="Blue" BackColor="Wheat" CaptchaChars="ABCDEFGHIJKLMNOPQRSTUVWX123456789" Height="46px" Width="200px" />                        
+                            <a class="d-inline mx-2" href="../account/Login.aspx"><i class="bi bi-arrow-clockwise" style="font-size:2.5rem; vertical-align:middle;"></i></a>
+
                             <br />
-                            <asp:Label runat="server" AssociatedControlID="TxtCaptcha" CssClass="col-md-4 control-label">مقدار کادر بالا را وارد کنید</asp:Label>
-                            <asp:TextBox runat="server" ID="TxtCaptcha" CssClass="form-control" MaxLength="6" />
+                            <br />
+                            <asp:Label runat="server" AssociatedControlID="TxtCaptcha" CssClass="col-md-6 control-label">مقدار کادر بالا را وارد کنید</asp:Label>
+                            <asp:TextBox runat="server" ID="TxtCaptcha" CssClass="form-control" MaxLength="5" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="TxtCaptcha" CssClass="text-danger" ErrorMessage="لطفا مقدار کادر بالا را  وارد کنید" />
                             <br />
                             <br />
