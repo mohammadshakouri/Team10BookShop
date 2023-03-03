@@ -17,7 +17,7 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
-                    CssClass="text-danger" ErrorMessage="لطفا ایمیل را به درستی وارد کنید" />
+                    CssClass="text-danger" ErrorMessage="لطفا ایمیل را به درستی وارد کنید" ValidationGroup="register"/>
             </div>
         </div>
         <div class="form-group">
@@ -25,7 +25,7 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
-                    CssClass="text-danger" ErrorMessage="لطفا رمز عبور را وارد کنید" />
+                    CssClass="text-danger" ErrorMessage="لطفا رمز عبور را وارد کنید" ValidationGroup="register" />
             </div>
         </div>
         <div class="form-group">
@@ -33,30 +33,32 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
-                    CssClass="text-danger" Display="Dynamic" ErrorMessage="لطفا تکرار رمز عبور را وارد کنید" />
+                    CssClass="text-danger" Display="Dynamic" ErrorMessage="لطفا تکرار رمز عبور را وارد کنید" ValidationGroup="register"/>
                 <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
-                    CssClass="text-danger" Display="Dynamic" ErrorMessage="تکرار رمز عبور با رمز عبور وارد شده مطابقت ندارد" />
+                    CssClass="text-danger" Display="Dynamic" ErrorMessage="تکرار رمز عبور با رمز عبور وارد شده مطابقت ندارد" ValidationGroup="register"/>
             </div>
         </div>
         <br />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-
-                <cap:CaptchaControl ID="captcha1" runat="server" CssClass="d-inline" CaptchaLength="5" CaptchaHeight="50" CaptchaWidth="200" CaptchaLineNoise="none" CaptchaMinTimeout="3" CaptchaMaxTimeout="240" ForeColor="Blue" BackColor="Wheat" CaptchaChars="ABCDEFGHIJKLMNOPQRSTUVWX123456789" Height="46px" Width="200px" />
-                <a class="d-inline mx-2" href="../account/Register.aspx"><i class="bi bi-arrow-clockwise" style="font-size: 2.5rem; vertical-align: middle;"></i></a>
-
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <cap:CaptchaControl ID="captcha1" runat="server" CssClass="d-inline" CaptchaLength="5" CaptchaHeight="50" CaptchaWidth="200" CaptchaLineNoise="none" CaptchaMinTimeout="1" CaptchaMaxTimeout="240" ForeColor="Blue" BackColor="Wheat" CaptchaChars="ABCDEFGHIJKLMNOPQRSTUVWX123456789" Height="46px" Width="200px" CustomValidatorErrorMessage="لطفا مقدار داخل تصویر را به درستی وارد کنید" />
+                        <asp:Button runat="server" CssClass="d-inline mx-2 btn btn-primary" Text="بعدی" />
+                    </ContentTemplate>
+                </asp:UpdatePanel>
                 <br />
                 <br />
                 <asp:Label runat="server" AssociatedControlID="TxtCaptcha" CssClass="col-md-6 control-label">مقدار کادر بالا را وارد کنید</asp:Label>
                 <asp:TextBox runat="server" ID="TxtCaptcha" CssClass="form-control" MaxLength="5" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="TxtCaptcha" CssClass="text-danger" ErrorMessage="لطفا مقدار کادر بالا را  وارد کنید" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="TxtCaptcha" CssClass="text-danger" ErrorMessage="لطفا مقدار کادر بالا را  وارد کنید" ValidationGroup="register" />
                 <br />
                 <br />
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <asp:Button runat="server" OnClick="CreateUser_Click" Text="ثبت نام" CssClass="btn btn-info" />
+                <asp:Button runat="server" OnClick="CreateUser_Click" Text="ثبت نام" CssClass="btn btn-info" ValidationGroup="register" />
             </div>
         </div>
     </div>

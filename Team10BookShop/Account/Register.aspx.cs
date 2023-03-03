@@ -17,8 +17,6 @@ namespace Team10BookShop.Account
 
             if (!captcha1.UserValidated)
             {
-
-                ErrorMessage.Text = "لطفا مقدار داخل کادر را به طور صحیح وارد کنید";
                 return;
             }
 
