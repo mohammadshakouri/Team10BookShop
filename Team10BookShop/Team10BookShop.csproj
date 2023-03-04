@@ -218,6 +218,8 @@
     <Content Include="Content\Webfonts\letter-spacing.png" />
     <Content Include="Content\Webfonts\style.css" />
     <Content Include="Content\Webfonts\webfont test.html" />
+    <Content Include="Images\pre.gif" />
+    <Content Include="Images\preloader.gif" />
     <Content Include="Models\EBookModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EBookModel.edmx</DependentUpon>

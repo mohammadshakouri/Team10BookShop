@@ -3,6 +3,8 @@
 <%@ Register Assembly="MSCaptcha" Namespace="MSCaptcha" TagPrefix="cap" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+        <ContentTemplate>
     <h2>ثبت نام در انتشارات سیماک</h2>
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
@@ -40,13 +42,9 @@
         </div>
         <br />
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                    <ContentTemplate>
+            <div class="col-md-offset-2 col-md-10">             
                         <cap:CaptchaControl ID="captcha1" runat="server" CssClass="d-inline" CaptchaLength="5" CaptchaHeight="50" CaptchaWidth="200" CaptchaLineNoise="none" CaptchaMinTimeout="1" CaptchaMaxTimeout="240" ForeColor="Blue" BackColor="Wheat" CaptchaChars="ABCDEFGHIJKLMNOPQRSTUVWX123456789" Height="46px" Width="200px" CustomValidatorErrorMessage="لطفا مقدار داخل تصویر را به درستی وارد کنید" />
-                        <asp:Button runat="server" CssClass="d-inline mx-2 btn btn-primary" Text="بعدی" />
-                    </ContentTemplate>
-                </asp:UpdatePanel>
+                        <asp:Button runat="server" CssClass="d-inline mx-2 btn btn-primary" Text="بعدی" />          
                 <br />
                 <br />
                 <asp:Label runat="server" AssociatedControlID="TxtCaptcha" CssClass="col-md-6 control-label">مقدار کادر بالا را وارد کنید</asp:Label>
@@ -76,4 +74,6 @@
     <br />
     <br />
     <br />
+      </ContentTemplate>
+    </asp:UpdatePanel>
 </asp:Content>
