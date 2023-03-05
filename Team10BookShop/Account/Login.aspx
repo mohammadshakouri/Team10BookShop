@@ -4,6 +4,8 @@
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+        <ContentTemplate>
     <%--<h2><%: Title %></h2>--%>
     <h2>ورود به انتشارات سیماک</h2>
 
@@ -23,14 +25,14 @@
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
-                                CssClass="text-danger" ErrorMessage="وارد کردن ایمیل ضروری است" />
+                                CssClass="text-danger" ErrorMessage="وارد کردن ایمیل ضروری است" ValidationGroup="login"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">رمز عبور</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="لطفا رمز عبور را وارد کنید" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="لطفا رمز عبور را وارد کنید" ValidationGroup="login" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -43,19 +45,21 @@
                         <br />
                     </div>
                     <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <cap:CaptchaControl ID="captcha1" runat="server" CaptchaLength="6" CaptchaHeight="50" CaptchaWidth="200" CaptchaLineNoise="Medium" CaptchaMinTimeout="3" CaptchaMaxTimeout="240" ForeColor="Blue" BackColor="Wheat" CaptchaChars="ABCDEFGHIJKLMNOPQRSTUVWX123456789" Height="46px" Width="200px" />
+                        <div class="col-md-offset-2 col-md-10">                        
+                                    <cap:CaptchaControl ID="captcha1" runat="server" CssClass="d-inline" CaptchaLength="5" CaptchaHeight="50" CaptchaWidth="200" CaptchaLineNoise="none" CaptchaMinTimeout="1" CaptchaMaxTimeout="240" ForeColor="Blue" BackColor="Wheat" CaptchaChars="ABCDEFGHIJKLMNOPQRSTUVWX123456789" Height="46px" Width="200px" />
+                                    <asp:Button runat="server" CssClass="d-inline mx-2 btn btn-primary" Text="بعدی"/>                      
                             <br />
-                            <asp:Label runat="server" AssociatedControlID="TxtCaptcha" CssClass="col-md-4 control-label">مقدار کادر بالا را وارد کنید</asp:Label>
-                            <asp:TextBox runat="server" ID="TxtCaptcha" CssClass="form-control" MaxLength="6" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="TxtCaptcha" CssClass="text-danger" ErrorMessage="لطفا مقدار کادر بالا را  وارد کنید" />
+                            <br />
+                            <asp:Label runat="server" AssociatedControlID="TxtCaptcha" CssClass="col-md-6 control-label">مقدار کادر بالا را وارد کنید</asp:Label>
+                            <asp:TextBox runat="server" ID="TxtCaptcha" CssClass="form-control" MaxLength="5" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="TxtCaptcha" CssClass="text-danger" ErrorMessage="لطفا مقدار کادر بالا را  وارد کنید" ValidationGroup="login"/>
                             <br />
                             <br />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:Button runat="server" OnClick="LogIn" Text="ورود" CssClass="btn btn-success" />
+                            <asp:Button runat="server" OnClick="LogIn" Text="ورود" CssClass="btn btn-success" ValidationGroup="login" />
                             <span class="p-x-5"></span>
                             <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled" CssClass="btn btn-outline-success">ثبت نام</asp:HyperLink>
                             <asp:HyperLink NavigateUrl="~/Account/Forgot.aspx" runat="server" ID="ForgotPasswordHyperLink" CssClass="btn btn-outline-info" ViewStateMode="Enabled">فراموشی رمز عبور</asp:HyperLink>
@@ -90,4 +94,6 @@
     <br />
     <br />
     <br />
+                </ContentTemplate>
+    </asp:UpdatePanel>
 </asp:Content>

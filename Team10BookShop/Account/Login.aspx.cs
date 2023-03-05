@@ -39,12 +39,6 @@ namespace Team10BookShop.Account
 
             var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
 
-
-            
-              
-            
-
-
             if (IsValid)
             {
 

@@ -68,8 +68,8 @@ namespace Team10BookShop
             {
                 // Validate file type
                 string fileExtension = System.IO.Path.GetExtension(FileUploadImage.FileName).ToLower();
-                if ((fileExtension != ".jpg") && (fileExtension != ".png"))
-                    lblErrorFileUpload.Text = "برای کاور کتاب فقط پسوند jpg و png و برای فایل کتاب فقط پسوند pdf مجاز است";
+                if ((fileExtension != ".jpg"))
+                    lblErrorFileUpload.Text = "برای کاور کتاب فقط پسوند jpg و برای فایل کتاب پسوند pdf مجاز است";
 
                 else
                 {

@@ -21,7 +21,12 @@
     <link href="~/Content/Webfonts/style.css" rel="stylesheet" />
 </head>
 <body>
-
+        <asp:UpdateProgress ID="UpdateProgress2" runat="server">
+                  
+                <ProgressTemplate>
+                    <img src="../Images/pre.gif" style="position:fixed; left:50%; top:50%; width:100px; height:100px;" />                                   
+                </ProgressTemplate>
+            </asp:UpdateProgress>
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -107,9 +112,11 @@
             </nav>
           
         </header>
+        
         <div style="padding-bottom: 4.0rem">
         </div>
         <div class="container body-content">
+          
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
 
